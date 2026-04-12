@@ -1,0 +1,22 @@
+[Unit]
+Description=OpenTalon Web Service
+Documentation=https://github.com/ziwei-control/opentalon
+After=network.target
+
+[Service]
+Type=simple
+User=%USER%
+WorkingDirectory=%INSTALL_DIR%
+ExecStart=%PYTHON% %INSTALL_DIR%/web_server.py --port 6767
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=opentalon
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
