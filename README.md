@@ -18,6 +18,30 @@ OpenTalon 将智能体视为一个有"生命"的实体，它拥有：
 
 ---
 
+## 🚀 一键部署
+
+### 快速部署 (3 分钟)
+
+```bash
+# 国内用户 (Gitee)
+curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+
+# 海外用户 (GitHub)
+curl -fsSL https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy.sh | bash
+```
+
+### 手动部署
+
+```bash
+git clone https://gitee.com/pandac0/opentalon.git
+cd opentalon
+./deploy.sh
+```
+
+详见：[DEPLOY.md](DEPLOY.md) - 完整部署指南
+
+---
+
 ## 🏗️ 系统架构
 
 ```
