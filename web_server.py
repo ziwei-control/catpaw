@@ -153,17 +153,40 @@ def chat():
     # 构建消息
     if image_data:
         # 有图片，使用视觉模型
-        # 通义千问需要特殊格式
+        # 通义千问使用原生 API
         if 'dashscope' in base_url:
-            # Qwen 格式：图片作为单独的消息部分
-            messages = [{
-                'role': 'user',
-                'content': [
-                    {'image': image_data},  # Qwen 直接使用 base64
-                    {'text': message or '请描述这张图片'}
-                ]
-            }]
-            model = 'qwen-vl-max'
+            # Qwen 原生 API 格式
+            url = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation'
+            headers = {
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            }
+            payload = {
+                'model': 'qwen-vl-max',
+                'input': {
+                    'messages': [{
+                        'role': 'user',
+                        'content': [
+                            {'image': image_data},  # base64 或 URL
+                            {'text': message or '请描述这张图片'}
+                        ]
+                    }]
+                },
+                'parameters': {
+                    'temperature': config.get('temperature', 0.7),
+                    'max_tokens': config.get('max_tokens', 4096)
+                }
+            }
+            
+            try:
+                response = requests.post(url, headers=headers, json=payload, timeout=120)
+                response.raise_for_status()
+                result = response.json()
+                # Qwen 原生 API 响应格式
+                content = result['output']['choices'][0]['message']['content']
+                return jsonify({'success': True, 'response': content})
+            except Exception as e:
+                return jsonify({'success': False, 'error': f'请求失败：{str(e)}'})
         else:
             # OpenAI/Kimi 格式
             messages = [{
@@ -185,27 +208,28 @@ def chat():
         # 纯文字
         messages = [{'role': 'user', 'content': message}]
     
-    # 调用 LLM
-    url = f"{base_url}/chat/completions"
-    headers = {
-        'Authorization': f'Bearer {api_key}',
-        'Content-Type': 'application/json'
-    }
-    payload = {
-        'model': model,
-        'messages': messages,
-        'temperature': config.get('temperature', 0.7),
-        'max_tokens': config.get('max_tokens', 4096)
-    }
-    
-    try:
-        response = requests.post(url, headers=headers, json=payload, timeout=120)
-        response.raise_for_status()
-        data = response.json()
-        result = data['choices'][0]['message']['content']
-        return jsonify({'success': True, 'response': result})
-    except Exception as e:
-        return jsonify({'success': False, 'error': f'请求失败：{str(e)}'})
+    # 调用 LLM (非 Qwen 图片情况)
+    if not image_data or 'dashscope' not in base_url:
+        url = f"{base_url}/chat/completions"
+        headers = {
+            'Authorization': f'Bearer {api_key}',
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            'model': model,
+            'messages': messages,
+            'temperature': config.get('temperature', 0.7),
+            'max_tokens': config.get('max_tokens', 4096)
+        }
+        
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=120)
+            response.raise_for_status()
+            data = response.json()
+            result = data['choices'][0]['message']['content']
+            return jsonify({'success': True, 'response': result})
+        except Exception as e:
+            return jsonify({'success': False, 'error': f'请求失败：{str(e)}'})
 
 
 @app.route('/api/upload/image', methods=['POST'])
