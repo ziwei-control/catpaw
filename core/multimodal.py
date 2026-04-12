@@ -139,18 +139,30 @@ def analyze_image(image_path, prompt='请描述这张图片'):
     }.get(ext, 'image/jpeg')
     
     # 构建消息
-    messages = [{
-        'role': 'user',
-        'content': [
-            {'type': 'text', 'text': prompt},
-            {
-                'type': 'image_url',
-                'image_url': {
-                    'url': f'data:{mime_type};base64,{base64_image}'
+    if 'dashscope' in base_url:
+        # Qwen 格式
+        messages = [{
+            'role': 'user',
+            'content': [
+                {'image': f'data:{mime_type};base64,{base64_image}'},
+                {'text': prompt}
+            ]
+        }]
+        model = 'qwen-vl-max'
+    else:
+        # OpenAI/Kimi 格式
+        messages = [{
+            'role': 'user',
+            'content': [
+                {'type': 'text', 'text': prompt},
+                {
+                    'type': 'image_url',
+                    'image_url': {
+                        'url': f'data:{mime_type};base64,{base64_image}'
+                    }
                 }
-            }
-        ]
-    }]
+            ]
+        }]
     
     # 调用 API
     url = f"{base_url}/chat/completions"

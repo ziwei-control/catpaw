@@ -153,23 +153,34 @@ def chat():
     # 构建消息
     if image_data:
         # 有图片，使用视觉模型
-        messages = [{
-            'role': 'user',
-            'content': [
-                {'type': 'text', 'text': message or '请描述这张图片'},
-                {'type': 'image_url', 'image_url': {'url': image_data}}
-            ]
-        }]
-        
-        # 使用视觉模型
-        vision_models = ['gpt-4o', 'gpt-4-turbo', 'gpt-4-vision', 'qwen-vl', 'claude-3']
-        if not any(vm in model.lower() for vm in vision_models):
-            if 'moonshot' in base_url:
-                model = 'moonshot-v1-128k'
-            elif 'dashscope' in base_url:
-                model = 'qwen-vl-max'
-            elif 'openai' in base_url:
-                model = 'gpt-4o'
+        # 通义千问需要特殊格式
+        if 'dashscope' in base_url:
+            # Qwen 格式：图片作为单独的消息部分
+            messages = [{
+                'role': 'user',
+                'content': [
+                    {'image': image_data},  # Qwen 直接使用 base64
+                    {'text': message or '请描述这张图片'}
+                ]
+            }]
+            model = 'qwen-vl-max'
+        else:
+            # OpenAI/Kimi 格式
+            messages = [{
+                'role': 'user',
+                'content': [
+                    {'type': 'text', 'text': message or '请描述这张图片'},
+                    {'type': 'image_url', 'image_url': {'url': image_data}}
+                ]
+            }]
+            
+            # 使用视觉模型
+            vision_models = ['gpt-4o', 'gpt-4-turbo', 'gpt-4-vision', 'qwen-vl', 'claude-3']
+            if not any(vm in model.lower() for vm in vision_models):
+                if 'moonshot' in base_url:
+                    model = 'moonshot-v1-128k'
+                elif 'openai' in base_url:
+                    model = 'gpt-4o'
     else:
         # 纯文字
         messages = [{'role': 'user', 'content': message}]
