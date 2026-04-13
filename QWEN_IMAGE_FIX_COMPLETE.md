@@ -235,8 +235,8 @@ ad38ab1 docs: 添加 requests 模块修复文档
 
 | 平台 | 状态 | 地址 |
 |------|------|------|
-| **GitHub** | ✅ | https://github.com/ziwei-control/opentalon |
-| **Gitee** | ✅ | https://gitee.com/pandac0/opentalon |
+| **GitHub** | ✅ | https://github.com/ziwei-control/catpaw |
+| **Gitee** | ✅ | https://gitee.com/pandac0/catpaw |
 
 ---
 
@@ -282,7 +282,7 @@ ad38ab1 docs: 添加 requests 模块修复文档
 
 ## 🎉 总结
 
-OpenTalon v0.4.4 修复了图片识别问题：
+CatPaw v0.4.4 修复了图片识别问题：
 
 1. ✅ **Qwen 格式修复** - 使用正确的 API 格式
 2. ✅ **多模态支持** - 聊天和多模态标签都支持
@@ -292,8 +292,8 @@ OpenTalon v0.4.4 修复了图片识别问题：
 **现在可以正常识别图片了！** 🎉
 
 **仓库已同步**:
-- GitHub: https://github.com/ziwei-control/opentalon ✅
-- Gitee: https://gitee.com/pandac0/opentalon ✅
+- GitHub: https://github.com/ziwei-control/catpaw ✅
+- Gitee: https://gitee.com/pandac0/catpaw ✅
 
 ---
 

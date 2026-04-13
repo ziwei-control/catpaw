@@ -212,7 +212,7 @@ if __name__ == "__main__":
     test_cases = [
         "读取文件 README.md",
         "查看文件 workspace/SOUL.md",
-        'read "opentalon.py"',
+        'read "catpaw.py"',
         "总结文件 README.md",
     ]
     

@@ -1,5 +1,5 @@
 {
-  "_comment": "OpenTalon LLM 配置文件",
+  "_comment": "CatPaw LLM 配置文件",
   "_docs": "复制此文件并修改配置，或设置环境变量",
   
   "provider": "openai",

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenTalon LLM 配置工具
+CatPaw LLM 配置工具
 快速配置云模型提供商
 """
 
@@ -8,7 +8,7 @@ import json
 import os
 from pathlib import Path
 
-CONFIG_FILE = Path.home() / '.opentalon' / 'llm_config.json'
+CONFIG_FILE = Path.home() / '.catpaw' / 'llm_config.json'
 
 # 云模型提供商预设
 PROVIDERS = {
@@ -66,7 +66,7 @@ PROVIDERS = {
 def print_banner():
     print("""
     ╔═══════════════════════════════════════╗
-    ║    OpenTalon LLM 配置工具              ║
+    ║    CatPaw LLM 配置工具              ║
     ║        配置你的云模型大脑              ║
     ╚═══════════════════════════════════════╝
     """)
@@ -128,7 +128,7 @@ def test_connection(config):
     try:
         from core.llm_client import create_llm_client
         
-        os.chdir('/home/admin/projects/opentalon')
+        os.chdir('/home/admin/projects/catpaw')
         client = create_llm_client(str(CONFIG_FILE))
         
         print(f"✅ LLM 客户端创建成功")
@@ -219,9 +219,9 @@ def main():
         test_connection(config)
     
     print("\n✅ 配置完成！")
-    print("\n现在可以使用 OpenTalon:")
-    print("  cd /home/admin/projects/opentalon")
-    print("  python3 opentalon.py cli")
+    print("\n现在可以使用 CatPaw:")
+    print("  cd /home/admin/projects/catpaw")
+    print("  python3 catpaw.py cli")
 
 if __name__ == "__main__":
     main()

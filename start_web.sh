@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenTalon Web 服务启动脚本
+# CatPaw Web 服务启动脚本
 
 set -e
 
@@ -7,7 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo "======================================"
-echo "🌐 OpenTalon Web 服务"
+echo "🌐 CatPaw Web 服务"
 echo "======================================"
 echo ""
 
@@ -33,7 +33,7 @@ if ! python3 -c "import flask" 2>/dev/null; then
 fi
 
 # 检查 LLM 配置
-CONFIG_FILE=~/.opentalon/llm_config.json
+CONFIG_FILE=~/.catpaw/llm_config.json
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "⚠️  未检测到 LLM 配置"
     echo ""
@@ -48,7 +48,7 @@ fi
 
 echo ""
 echo "======================================"
-echo "🌐 OpenTalon Web 服务 (公网可访问)"
+echo "🌐 CatPaw Web 服务 (公网可访问)"
 echo "======================================"
 echo ""
 echo "📍 监听地址：0.0.0.0:$PORT"

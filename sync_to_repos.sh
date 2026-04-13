@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenTalon GitHub/Gitee 同步脚本
+# CatPaw GitHub/Gitee 同步脚本
 # 使用方法：./sync_to_repos.sh
 
 set -e
@@ -8,14 +8,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo "======================================"
-echo "🚀 OpenTalon 代码同步"
+echo "🚀 CatPaw 代码同步"
 echo "======================================"
 echo ""
 
 # 配置 Git 用户信息
 echo "📝 配置 Git 用户信息..."
-git config user.email "admin@opentalon.local"
-git config user.name "OpenTalon Admin"
+git config user.email "admin@catpaw.local"
+git config user.name "CatPaw Admin"
 
 # 检查是否有未提交的更改
 if ! git diff --cached --quiet || ! git diff --quiet; then
@@ -33,7 +33,7 @@ if [ ! -d ".git" ]; then
     git init
     git branch -m main
     git add .
-    git commit -m "Initial commit: OpenTalon v0.3.0"
+    git commit -m "Initial commit: CatPaw v0.3.0"
 fi
 
 echo ""
@@ -44,13 +44,13 @@ echo ""
 echo "请在 GitHub 和 Gitee 创建新仓库，然后输入仓库地址："
 echo ""
 echo "💡 建议仓库名称:"
-echo "   - GitHub: opentalon-python 或 opentalon-md"
-echo "   - Gitee:  opentalon-python 或 opentalon-md"
-echo "   (避免与官方 opentalon/opentalon 冲突)"
+echo "   - GitHub: catpaw-python 或 catpaw-md"
+echo "   - Gitee:  catpaw-python 或 catpaw-md"
+echo "   (避免与官方 catpaw/catpaw 冲突)"
 echo ""
 
-read -p "GitHub 仓库地址 (如：https://github.com/yourname/opentalon-python.git): " GITHUB_URL
-read -p "Gitee 仓库地址 (如：https://gitee.com/yourname/opentalon-python.git): " GITEE_URL
+read -p "GitHub 仓库地址 (如：https://github.com/yourname/catpaw-python.git): " GITHUB_URL
+read -p "Gitee 仓库地址 (如：https://gitee.com/yourname/catpaw-python.git): " GITEE_URL
 
 echo ""
 echo "🔗 配置远程仓库..."

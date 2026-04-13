@@ -1,12 +1,12 @@
 #!/bin/bash
-# OpenTalon 一键部署脚本
+# CatPaw 一键部署脚本
 # 从 GitHub 或 Gitee 克隆并自动部署启动
 
 set -e
 
 echo ""
 echo "╔═══════════════════════════════════════╗"
-echo "║     OpenTalon 一键部署脚本            ║"
+echo "║     CatPaw 一键部署脚本            ║"
 echo "║     Markdown is the Soul              ║"
 echo "╚═══════════════════════════════════════╝"
 echo ""
@@ -19,10 +19,10 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # 配置
-INSTALL_DIR="${INSTALL_DIR:-/home/admin/projects/opentalon}"
+INSTALL_DIR="${INSTALL_DIR:-/home/admin/projects/catpaw}"
 REPO_SOURCE="${REPO_SOURCE:-github}"  # github 或 gitee
-GITHUB_REPO="https://github.com/ziwei-control/opentalon.git"
-GITEE_REPO="https://gitee.com/pandac0/opentalon.git"
+GITHUB_REPO="https://github.com/ziwei-control/catpaw.git"
+GITEE_REPO="https://gitee.com/pandac0/catpaw.git"
 PYTHON_CMD="${PYTHON_CMD:-python3}"
 PIP_CMD="${PIP_CMD:-pip3}"
 
@@ -202,7 +202,7 @@ configure_llm() {
     echo ""
     log_info "配置 LLM..."
     
-    CONFIG_FILE=~/.opentalon/llm_config.json
+    CONFIG_FILE=~/.catpaw/llm_config.json
     
     if [ -f "$CONFIG_FILE" ]; then
         log_success "LLM 配置已存在"
@@ -264,13 +264,13 @@ configure_llm() {
     fi
     
     # 创建配置目录
-    mkdir -p ~/.opentalon
+    mkdir -p ~/.catpaw
     
     # 写入配置
     cat > "$CONFIG_FILE" << EOF
 {
-  "_comment": "OpenTalon LLM 配置 - 自动部署",
-  "_docs": "详见 /home/admin/projects/opentalon/COMPLETE_GUIDE.md",
+  "_comment": "CatPaw LLM 配置 - 自动部署",
+  "_docs": "详见 /home/admin/projects/catpaw/COMPLETE_GUIDE.md",
   "provider": "$PROVIDER",
   "api_key": "$API_KEY",
   "base_url": "$BASE_URL",
@@ -321,11 +321,11 @@ setup_systemd() {
     fi
     
     # 创建服务文件
-    SERVICE_FILE="/etc/systemd/system/opentalon.service"
+    SERVICE_FILE="/etc/systemd/system/catpaw.service"
     
     sudo cat > "$SERVICE_FILE" << EOF
 [Unit]
-Description=OpenTalon Web Service
+Description=CatPaw Web Service
 After=network.target
 
 [Service]
@@ -344,15 +344,15 @@ EOF
     sudo systemctl daemon-reload
     
     # 启用服务
-    sudo systemctl enable opentalon.service
+    sudo systemctl enable catpaw.service
     
     # 启动服务
-    sudo systemctl start opentalon.service
+    sudo systemctl start catpaw.service
     
     log_success "系统服务已配置"
-    log_info "服务状态：systemctl status opentalon"
-    log_info "启动服务：sudo systemctl start opentalon"
-    log_info "停止服务：sudo systemctl stop opentalon"
+    log_info "服务状态：systemctl status catpaw"
+    log_info "启动服务：sudo systemctl start catpaw"
+    log_info "停止服务：sudo systemctl stop catpaw"
 }
 
 # 启动服务
@@ -363,9 +363,9 @@ start_service() {
     cd "$INSTALL_DIR"
     
     # 检查是否使用 systemd
-    if sudo systemctl is-active --quiet opentalon.service 2>/dev/null; then
+    if sudo systemctl is-active --quiet catpaw.service 2>/dev/null; then
         log_success "服务已通过 systemd 启动"
-        sudo systemctl restart opentalon.service
+        sudo systemctl restart catpaw.service
     else
         # 手动启动
         if [ -d "venv" ]; then
@@ -409,13 +409,13 @@ show_complete() {
     echo "   更新：cd $INSTALL_DIR && ./update.sh"
     echo ""
     
-    if sudo systemctl is-active --quiet opentalon.service 2>/dev/null; then
+    if sudo systemctl is-active --quiet catpaw.service 2>/dev/null; then
         echo "🔧 系统服务命令:"
-        echo "   启动：sudo systemctl start opentalon"
-        echo "   停止：sudo systemctl stop opentalon"
-        echo "   重启：sudo systemctl restart opentalon"
-        echo "   状态：sudo systemctl status opentalon"
-        echo "   日志：sudo journalctl -u opentalon -f"
+        echo "   启动：sudo systemctl start catpaw"
+        echo "   停止：sudo systemctl stop catpaw"
+        echo "   重启：sudo systemctl restart catpaw"
+        echo "   状态：sudo systemctl status catpaw"
+        echo "   日志：sudo journalctl -u catpaw -f"
         echo ""
     fi
     

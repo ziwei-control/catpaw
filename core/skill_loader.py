@@ -251,7 +251,7 @@ def execute_skill(user_input: str, workspace_path: str = 'workspace/') -> str:
 
 # 测试
 if __name__ == "__main__":
-    print("🔧 OpenTalon 技能加载器测试")
+    print("🔧 CatPaw 技能加载器测试")
     print("")
     
     loader = SkillLoader('skills/')

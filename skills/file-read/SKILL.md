@@ -2,7 +2,7 @@
 name: file-read
 description: 读取和总结本地文本文件
 version: 0.1.0
-author: OpenTalon Team
+author: CatPaw Team
 triggers:
   - "读取文件"
   - "查看文件"
@@ -61,7 +61,7 @@ supported_formats:
 智能体：
 📄 README.md (前 50 行)
 
-# OpenTalon 项目
+# CatPaw 项目
 
 这是一个 Markdown 驱动的智能体项目...
 

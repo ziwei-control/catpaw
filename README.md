@@ -1,6 +1,6 @@
-# OpenTalon - Markdown 驱动的本地化自主智能体
+# CatPaw - Markdown 驱动的本地化自主智能体
 
-> **项目代号**: OpenTalon  
+> **项目代号**: CatPaw  
 > **核心理念**: Markdown 即灵魂  
 > **愿景**: 构建完全本地化、以隐私为优先的个人智能体系统
 
@@ -10,7 +10,7 @@
 
 **"智能体应该有灵魂，而灵魂应该可读可编辑。"**
 
-OpenTalon 将智能体视为一个有"生命"的实体，它拥有：
+CatPaw 将智能体视为一个有"生命"的实体，它拥有：
 - 📁 **基于文件系统的长期记忆**
 - 📝 **基于 Markdown 配置的性格基因**
 - 🧠 **本地环境中的自主规划能力**
@@ -24,17 +24,17 @@ OpenTalon 将智能体视为一个有"生命"的实体，它拥有：
 
 ```bash
 # 国内用户 (Gitee)
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 
 # 海外用户 (GitHub)
-curl -fsSL https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ziwei-control/catpaw/main/deploy.sh | bash
 ```
 
 ### 手动部署
 
 ```bash
-git clone https://gitee.com/pandac0/opentalon.git
-cd opentalon
+git clone https://gitee.com/pandac0/catpaw.git
+cd catpaw
 ./deploy.sh
 ```
 
@@ -92,7 +92,7 @@ cd opentalon
 ## 📁 目录结构
 
 ```
-opentalon/
+catpaw/
 ├── README.md                 # 项目说明 (本文件)
 ├── workspace/                # 工作空间
 │   ├── SOUL.md              # 智能体人格定义
@@ -191,7 +191,7 @@ permissions:
 **支持 Kimi2.5 和 Qwen3.5!**
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -223,7 +223,7 @@ pip3 install flask flask-cors
 #### 方式 B: CLI 命令行
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ### 3. 配置智能体人格 (可选)
@@ -240,7 +240,7 @@ vim workspace/USER.md
 
 ## 📊 与 CoPaw 对比
 
-| 特性 | CoPaw | OpenTalon |
+| 特性 | CoPaw | CatPaw |
 |------|-------|-----------|
 | **配置文件** | 混合 (SOUL+PROFILE+AGENTS) | 解耦 (灵魂三件套) |
 | **用户模型** | PROFILE.md 内嵌 | 独立 USER.md |
@@ -274,5 +274,5 @@ vim workspace/USER.md
 ---
 
 **项目创建时间**: 2026-04-09  
-**设计理念来源**: OpenTalon 社区  
+**设计理念来源**: CatPaw 社区  
 **许可证**: MIT

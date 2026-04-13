@@ -1,4 +1,4 @@
-# ✅ OpenTalon 最新同步完成
+# ✅ CatPaw 最新同步完成
 
 **同步时间**: 2026-04-12 12:48  
 **版本**: v0.3.1  
@@ -10,8 +10,8 @@
 
 | 平台 | 状态 | 仓库地址 | 最新提交 |
 |------|------|---------|---------|
-| **GitHub** | ✅ 已同步 | https://github.com/ziwei-control/opentalon | 6bff894 |
-| **Gitee** | ✅ 已同步 | https://gitee.com/pandac0/opentalon | 6bff894 |
+| **GitHub** | ✅ 已同步 | https://github.com/ziwei-control/catpaw | 6bff894 |
+| **Gitee** | ✅ 已同步 | https://gitee.com/pandac0/catpaw | 6bff894 |
 
 ---
 
@@ -22,7 +22,7 @@
 570aa7b docs: 添加自动部署完成总结
 3270207 docs: 更新 README 添加一键部署说明
 74daab6 feat: 添加一键部署和自动启动系统
-d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
+d7a8a1b Initial commit: CatPaw v0.3.0 - Markdown 驱动的智能体系统
 ```
 
 ---
@@ -30,13 +30,13 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 ## 📁 仓库统计
 
 ### GitHub
-- **仓库**: https://github.com/ziwei-control/opentalon
+- **仓库**: https://github.com/ziwei-control/catpaw
 - **大小**: 94 KB
 - **最后推送**: 2026-04-12T04:48:38Z
 - **分支**: main
 
 ### Gitee
-- **仓库**: https://gitee.com/pandac0/opentalon
+- **仓库**: https://gitee.com/pandac0/catpaw
 - **大小**: 94 KB
 - **最后推送**: 2026-04-12T04:48:38Z
 - **分支**: main
@@ -46,7 +46,7 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 ## 📦 已同步文件
 
 ### 核心程序 (5 个)
-- ✅ opentalon.py - 主程序
+- ✅ catpaw.py - 主程序
 - ✅ web_server.py - Web 服务器
 - ✅ configure_llm.py - LLM 配置工具
 - ✅ start.sh - 启动脚本
@@ -55,7 +55,7 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 ### 部署系统 (3 个) ⭐
 - ✅ deploy.sh - 一键部署脚本
 - ✅ update.sh - 一键更新脚本
-- ✅ opentalon.service.template - systemd 服务模板
+- ✅ catpaw.service.template - systemd 服务模板
 
 ### 文档 (15+ 个)
 - ✅ README.md - 项目总览
@@ -65,7 +65,7 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 - ✅ CLOUD_MODEL_SETUP.md - 云模型配置
 - ✅ PUBLIC_ACCESS_GUIDE.md - 公网访问
 - ✅ TROUBLESHOOTING.md - 故障排除
-- ✅ OPENTALON_TIMELINE.md - 时间线
+- ✅ CATPAW_TIMELINE.md - 时间线
 - ✅ AUTO_DEPLOY_COMPLETE.md - 部署总结 ⭐
 - ✅ SYNC_COMPLETE.md - 同步总结
 - ✅ PUSH_TO_GITHUB_GITEE.md - 推送指南
@@ -102,10 +102,10 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 git remote -v
 
 # 输出:
-gitee   https://gitee.com/pandac0/opentalon.git (fetch)
-gitee   https://gitee.com/pandac0/opentalon.git (push)
-origin  https://github.com/ziwei-control/opentalon.git (fetch)
-origin  https://github.com/ziwei-control/opentalon.git (push)
+gitee   https://gitee.com/pandac0/catpaw.git (fetch)
+gitee   https://gitee.com/pandac0/catpaw.git (push)
+origin  https://github.com/ziwei-control/catpaw.git (fetch)
+origin  https://github.com/ziwei-control/catpaw.git (push)
 ```
 
 ---
@@ -115,13 +115,13 @@ origin  https://github.com/ziwei-control/opentalon.git (push)
 ### 从 Gitee 部署 (国内推荐)
 
 ```bash
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 ```
 
 ### 从 GitHub 部署 (海外推荐)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ziwei-control/catpaw/main/deploy.sh | bash
 ```
 
 ---
@@ -131,7 +131,7 @@ curl -fsSL https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy
 ### 手动同步
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 提交更改
 git add .
@@ -145,7 +145,7 @@ git push gitee main
 ### 使用同步脚本
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./sync_to_repos.sh
 ```
 
@@ -154,7 +154,7 @@ cd /home/admin/projects/opentalon
 ## 🎯 访问仓库
 
 ### GitHub
-**https://github.com/ziwei-control/opentalon**
+**https://github.com/ziwei-control/catpaw**
 
 - 📄 代码
 - 📚 文档
@@ -162,7 +162,7 @@ cd /home/admin/projects/opentalon
 - ⭐ Star
 
 ### Gitee
-**https://gitee.com/pandac0/opentalon**
+**https://gitee.com/pandac0/catpaw**
 
 - 📄 代码
 - 📚 文档
@@ -193,7 +193,7 @@ cd /home/admin/projects/opentalon
 
 ## 🎉 总结
 
-OpenTalon 最新版本已成功同步到 GitHub 和 Gitee！
+CatPaw 最新版本已成功同步到 GitHub 和 Gitee！
 
 **部署时间**: < 3 分钟  
 **部署命令**: 1 条  
@@ -201,8 +201,8 @@ OpenTalon 最新版本已成功同步到 GitHub 和 Gitee！
 
 ---
 
-**GitHub**: https://github.com/ziwei-control/opentalon ✅  
-**Gitee**: https://gitee.com/pandac0/opentalon ✅
+**GitHub**: https://github.com/ziwei-control/catpaw ✅  
+**Gitee**: https://gitee.com/pandac0/catpaw ✅
 
 **最后同步**: 2026-04-12 12:48  
 **版本**: v0.3.1

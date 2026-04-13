@@ -1,4 +1,4 @@
-# ✅ OpenTalon 多模态功能完成总结
+# ✅ CatPaw 多模态功能完成总结
 
 **完成时间**: 2026-04-12 13:05  
 **版本**: v0.4.0  
@@ -72,7 +72,7 @@ curl -X POST http://localhost:6767/api/upload/audio \
 
 **存储位置**:
 ```
-~/.opentalon/uploads/
+~/.catpaw/uploads/
 ├── image/
 └── audio/
 ```
@@ -152,7 +152,7 @@ $ curl http://localhost:6767/api/stats
 ```bash
 $ python3 -c "from core.multimodal import *; print('OK')"
 多模态模块加载成功
-上传目录：/home/admin/.opentalon/uploads
+上传目录：/home/admin/.catpaw/uploads
 ```
 
 ✅ **模块加载正常**
@@ -165,7 +165,7 @@ $ python3 -c "from core.multimodal import *; print('OK')"
 
 1. **启动服务**:
    ```bash
-   cd /home/admin/projects/opentalon
+   cd /home/admin/projects/catpaw
    ./start.sh
    ```
 
@@ -207,12 +207,12 @@ e5543ef docs: 添加最新同步完成文档
 ## 🌐 仓库同步
 
 ### GitHub
-- **地址**: https://github.com/ziwei-control/opentalon
+- **地址**: https://github.com/ziwei-control/catpaw
 - **状态**: ✅ 已同步
 - **最新提交**: 30618a3
 
 ### Gitee
-- **地址**: https://gitee.com/pandac0/opentalon
+- **地址**: https://gitee.com/pandac0/catpaw
 - **状态**: ✅ 已同步
 - **最新提交**: 30618a3
 
@@ -273,7 +273,7 @@ e5543ef docs: 添加最新同步完成文档
 
 ## 🎉 总结
 
-OpenTalon v0.4.0 新增多模态支持：
+CatPaw v0.4.0 新增多模态支持：
 
 1. ✅ **图片识别** - 支持 4 种格式，多种视觉模型
 2. ✅ **音频识别** - 支持 6 种格式，Whisper 转录
@@ -282,8 +282,8 @@ OpenTalon v0.4.0 新增多模态支持：
 5. ✅ **API 支持** - 完整的 RESTful API
 
 **仓库已同步**:
-- GitHub: https://github.com/ziwei-control/opentalon ✅
-- Gitee: https://gitee.com/pandac0/opentalon ✅
+- GitHub: https://github.com/ziwei-control/catpaw ✅
+- Gitee: https://gitee.com/pandac0/catpaw ✅
 
 ---
 

@@ -1,4 +1,4 @@
-# 📤 OpenTalon 推送到 GitHub 和 Gitee 指南
+# 📤 CatPaw 推送到 GitHub 和 Gitee 指南
 
 **更新时间**: 2026-04-12
 
@@ -19,7 +19,7 @@
 
 1. 访问：https://github.com/new
 2. 填写信息：
-   - **Repository name**: `opentalon`
+   - **Repository name**: `catpaw`
    - **Description**: "Markdown 驱动的本地化自主智能体系统"
    - **Public/Private**: 选择 Public (公开) 或 Private (私有)
    - ❌ 不要勾选 "Add README"
@@ -31,8 +31,8 @@
 
 1. 访问：https://gitee.com/new
 2. 填写信息：
-   - **仓库路径**: `opentalon`
-   - **仓库名称**: `OpenTalon`
+   - **仓库路径**: `catpaw`
+   - **仓库名称**: `CatPaw`
    - **仓库介绍**: "Markdown 驱动的本地化自主智能体系统"
    - **开源/私有**: 选择公开或私有
    - ❌ 不要勾选 "初始化仓库"
@@ -85,7 +85,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ### 步骤 4: 运行推送脚本
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 编辑脚本，修改用户名 (如果需要)
 vim push_to_repo.sh
@@ -104,13 +104,13 @@ vim push_to_repo.sh
 ### 添加远程仓库
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # GitHub
-git remote add origin git@github.com:YOUR_USERNAME/opentalon.git
+git remote add origin git@github.com:YOUR_USERNAME/catpaw.git
 
 # Gitee
-git remote add gitee git@gitee.com:YOUR_USERNAME/opentalon.git
+git remote add gitee git@gitee.com:YOUR_USERNAME/catpaw.git
 ```
 
 ### 推送到 GitHub
@@ -143,10 +143,10 @@ git remote -v
 
 应该看到：
 ```
-origin  git@github.com:YOUR_USERNAME/opentalon.git (fetch)
-origin  git@github.com:YOUR_USERNAME/opentalon.git (push)
-gitee   git@gitee.com:YOUR_USERNAME/opentalon.git (fetch)
-gitee   git@gitee.com:YOUR_USERNAME/opentalon.git (push)
+origin  git@github.com:YOUR_USERNAME/catpaw.git (fetch)
+origin  git@github.com:YOUR_USERNAME/catpaw.git (push)
+gitee   git@gitee.com:YOUR_USERNAME/catpaw.git (fetch)
+gitee   git@gitee.com:YOUR_USERNAME/catpaw.git (push)
 ```
 
 ### 查看提交历史
@@ -190,7 +190,7 @@ ssh -T git@gitee.com
 git remote remove origin
 
 # 重新添加
-git remote add origin git@github.com:YOUR_USERNAME/opentalon.git
+git remote add origin git@github.com:YOUR_USERNAME/catpaw.git
 ```
 
 ### 问题 3: "Updates were rejected"
@@ -221,7 +221,7 @@ git push origin main
 ### 日常推送
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 提交更改
 git add .
@@ -244,15 +244,15 @@ git push gitee main
 
 ### GitHub
 
-- **URL**: https://github.com/YOUR_USERNAME/opentalon
-- **SSH**: git@github.com:YOUR_USERNAME/opentalon.git
-- **HTTPS**: https://github.com/YOUR_USERNAME/opentalon.git
+- **URL**: https://github.com/YOUR_USERNAME/catpaw
+- **SSH**: git@github.com:YOUR_USERNAME/catpaw.git
+- **HTTPS**: https://github.com/YOUR_USERNAME/catpaw.git
 
 ### Gitee
 
-- **URL**: https://gitee.com/YOUR_USERNAME/opentalon
-- **SSH**: git@gitee.com:YOUR_USERNAME/opentalon.git
-- **HTTPS**: https://gitee.com/YOUR_USERNAME/opentalon.git
+- **URL**: https://gitee.com/YOUR_USERNAME/catpaw
+- **SSH**: git@gitee.com:YOUR_USERNAME/catpaw.git
+- **HTTPS**: https://gitee.com/YOUR_USERNAME/catpaw.git
 
 ---
 
@@ -289,7 +289,7 @@ git merge dev
 
 ```bash
 # 创建版本标签
-git tag -a v0.3.0 -m "OpenTalon v0.3.0"
+git tag -a v0.3.0 -m "CatPaw v0.3.0"
 git push origin v0.3.0
 ```
 

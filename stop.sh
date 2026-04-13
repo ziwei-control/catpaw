@@ -1,7 +1,7 @@
 #!/bin/bash
-# OpenTalon 停止脚本
+# CatPaw 停止脚本
 
-echo "🛑 停止 OpenTalon Web 服务..."
+echo "🛑 停止 CatPaw Web 服务..."
 
 # 查找进程
 PIDS=$(pgrep -f "web_server.py")

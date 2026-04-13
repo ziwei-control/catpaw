@@ -1,4 +1,4 @@
-# 🌐 OpenTalon 公网访问配置指南
+# 🌐 CatPaw 公网访问配置指南
 
 **更新时间**: 2026-04-12  
 **端口**: 6767
@@ -21,7 +21,7 @@
 ### 步骤 1: 启动 Web 服务
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 安装 Flask (首次需要)
 pip3 install flask flask-cors
@@ -147,15 +147,15 @@ http://你的公网IP:6767
 ### 配置保存位置
 
 ```bash
-~/.opentalon/llm_config.json
+~/.catpaw/llm_config.json
 ```
 
 ### 配置示例
 
 ```json
 {
-  "_comment": "OpenTalon LLM 配置 - 通过网页设置",
-  "_docs": "详见 /home/admin/projects/opentalon/COMPLETE_GUIDE.md",
+  "_comment": "CatPaw LLM 配置 - 通过网页设置",
+  "_docs": "详见 /home/admin/projects/catpaw/COMPLETE_GUIDE.md",
   "provider": "moonshot",
   "api_key": "sk-your-api-key-here",
   "base_url": "https://api.moonshot.cn/v1",
@@ -169,7 +169,7 @@ http://你的公网IP:6767
 ### 手动编辑配置
 
 ```bash
-vim ~/.opentalon/llm_config.json
+vim ~/.catpaw/llm_config.json
 ```
 
 ---
@@ -225,7 +225,7 @@ http://你的局域网IP:6767
 nohup python3 web_server.py &
 
 # 或使用 screen
-screen -S opentalon
+screen -S catpaw
 python3 web_server.py
 # Ctrl+A, D 分离会话
 ```
@@ -276,13 +276,13 @@ python3 configure_llm.py
 
 **检查权限**:
 ```bash
-ls -la ~/.opentalon/
+ls -la ~/.catpaw/
 ```
 
 **解决**:
 ```bash
-mkdir -p ~/.opentalon
-chmod 755 ~/.opentalon
+mkdir -p ~/.catpaw
+chmod 755 ~/.catpaw
 ```
 
 ---

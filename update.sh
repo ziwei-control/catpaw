@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenTalon 一键更新脚本
+# CatPaw 一键更新脚本
 
 set -e
 
@@ -8,7 +8,7 @@ cd "$SCRIPT_DIR"
 
 echo ""
 echo "╔═══════════════════════════════════════╗"
-echo "║     OpenTalon 一键更新脚本            ║"
+echo "║     CatPaw 一键更新脚本            ║"
 echo "╚═══════════════════════════════════════╝"
 echo ""
 

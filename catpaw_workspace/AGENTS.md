@@ -1,5 +1,5 @@
 ---
-# OpenTalon AGENTS.md - 多智能体协作规则
+# CatPaw AGENTS.md - 多智能体协作规则
 # 定义多智能体系统的路由、协作和记忆管理规范
 ---
 
@@ -79,7 +79,7 @@ Talon (主智能体):
 
 ```yaml
 shared_context:
-  project_name: "OpenTalon"
+  project_name: "CatPaw"
   user_preference: "简洁直接"
   deadline: "2026-04-10"
   constraints:
@@ -192,8 +192,8 @@ def memory_maintenance():
 sandbox:
   enabled: true
   allowed_paths:
-    - /home/admin/projects/opentalon/workspace
-    - /home/admin/projects/opentalon/skills
+    - /home/admin/projects/catpaw/workspace
+    - /home/admin/projects/catpaw/skills
   blocked_commands:
     - "rm -rf /"
     - "sudo *"

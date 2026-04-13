@@ -1,0 +1,21 @@
+[Unit]
+Description=CatPaw Web Server
+Documentation=https://pandaco.asia/chat/
+After=network.target nginx.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/.copaw/workspaces/default/catpaw
+ExecStart=/usr/bin/python3 /root/.copaw/workspaces/default/catpaw/web_server.py --port 6767
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/root/.copaw/workspaces/default/catpaw/logs/web.log
+StandardError=append:/root/.copaw/workspaces/default/catpaw/logs/web.log
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,6 +1,6 @@
 [Unit]
-Description=OpenTalon Web Service
-Documentation=https://github.com/ziwei-control/opentalon
+Description=OpenCat Web Service
+Documentation=https://github.com/ziwei-control/opencat
 After=network.target
 
 [Service]
@@ -12,7 +12,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=opentalon
+SyslogIdentifier=opencat
 
 # 安全设置
 NoNewPrivileges=true

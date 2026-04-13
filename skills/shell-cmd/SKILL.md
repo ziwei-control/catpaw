@@ -2,7 +2,7 @@
 name: shell-cmd
 description: 执行安全的 Shell 命令
 version: 0.1.0
-author: OpenTalon Team
+author: CatPaw Team
 triggers:
   - "执行命令"
   - "运行"
@@ -63,5 +63,5 @@ drwxr-xr-x  6 admin admin 4096 Apr  9 14:00 .
 
 智能体：
 $ pwd
-/home/admin/projects/opentalon
+/home/admin/projects/catpaw
 ```

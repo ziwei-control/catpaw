@@ -345,7 +345,7 @@ git, docker, kubectl, jq, curl, wget, htop
 
 1. **复制模板**
    ```bash
-   cd /home/admin/projects/opentalon
+   cd /home/admin/projects/catpaw
    cp workspace/USER.md workspace/USER.md.backup
    ```
 
@@ -365,7 +365,7 @@ git, docker, kubectl, jq, curl, wget, htop
 
 5. **保存并测试**
    ```bash
-   python3 opentalon.py cli
+   python3 catpaw.py cli
    # 看看智能体是否理解你的偏好
    ```
 
@@ -384,7 +384,7 @@ git, docker, kubectl, jq, curl, wget, htop
 
 填写完成后：
 
-1. 运行 `python3 opentalon.py cli` 测试
+1. 运行 `python3 catpaw.py cli` 测试
 2. 告诉智能体你的偏好
 3. 观察智能体是否理解
 4. 不满意就修改 USER.md

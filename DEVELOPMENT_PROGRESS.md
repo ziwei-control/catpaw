@@ -1,4 +1,4 @@
-# OpenTalon 开发进度
+# CatPaw 开发进度
 
 **最后更新**: 2026-04-09  
 **版本**: v0.2.0
@@ -13,7 +13,7 @@
 |------|------|------|------|
 | **LLM 调用接口** | ✅ 完成 | `core/llm_client.py` | 支持 OpenAI/Ollama/LM Studio |
 | **技能加载器** | ✅ 完成 | `core/skill_loader.py` | 动态加载和执行技能 |
-| **CLI 交互模式** | ✅ 完成 | `opentalon.py` | 增强版 CLI，支持技能和 LLM |
+| **CLI 交互模式** | ✅ 完成 | `catpaw.py` | 增强版 CLI，支持技能和 LLM |
 
 ### 技能库
 
@@ -99,21 +99,21 @@
 
 ```bash
 # 配置检查
-python3 opentalon.py config
+python3 catpaw.py config
 # ✅ 通过
 
 # 技能列表
-python3 opentalon.py skills list
+python3 catpaw.py skills list
 # ✅ 通过 - 3 个技能已加载
 
 # 技能测试
-python3 opentalon.py skills test "搜索文件 决策"
+python3 catpaw.py skills test "搜索文件 决策"
 # ✅ 通过 - 匹配 file-search
 
-python3 opentalon.py skills test "读取文件 README.md"
+python3 catpaw.py skills test "读取文件 README.md"
 # ✅ 通过 - 匹配 file-read
 
-python3 opentalon.py skills test "执行命令 pwd"
+python3 catpaw.py skills test "执行命令 pwd"
 # ✅ 通过 - 匹配 shell-cmd
 ```
 
@@ -195,5 +195,5 @@ python3 opentalon.py skills test "执行命令 pwd"
 
 ---
 
-**贡献者**: OpenTalon Team  
+**贡献者**: CatPaw Team  
 **许可证**: MIT

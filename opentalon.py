@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenTalon - Markdown 驱动的本地化自主智能体
+CatPaw - Markdown 驱动的本地化自主智能体
 
 主程序入口 v0.2.0
 
@@ -26,7 +26,7 @@ def print_banner():
     """打印欢迎横幅"""
     print("""
     ╔═══════════════════════════════════════╗
-    ║     OpenTalon - Markdown 驱动的智能体     ║
+    ║     CatPaw - Markdown 驱动的智能体     ║
     ║        Markdown is the Soul           ║
     ╚═══════════════════════════════════════╝
     """)
@@ -55,7 +55,7 @@ def cmd_cli(args):
     workspace_path = str(PROJECT_ROOT / 'workspace')
     
     print("")
-    print("欢迎使用 OpenTalon CLI!")
+    print("欢迎使用 CatPaw CLI!")
     print("输入 'help' 查看帮助，'exit' 退出")
     print("")
     
@@ -240,7 +240,7 @@ def cmd_skills(args):
         print("")
     
     else:
-        print("用法：python3 opentalon.py skills <list|search|test> [keyword]")
+        print("用法：python3 catpaw.py skills <list|search|test> [keyword]")
 
 def cmd_memory(args):
     """查看记忆"""
@@ -270,11 +270,11 @@ def cmd_config(args):
     print("")
     
     # 检查 LLM 配置
-    llm_config_path = os.path.expanduser('~/.opentalon/llm_config.json')
+    llm_config_path = os.path.expanduser('~/.catpaw/llm_config.json')
     if os.path.exists(llm_config_path):
-        print(f"  ✅ ~/.opentalon/llm_config.json (LLM 配置)")
+        print(f"  ✅ ~/.catpaw/llm_config.json (LLM 配置)")
     else:
-        print(f"  ⚠️  ~/.opentalon/llm_config.json (未配置)")
+        print(f"  ⚠️  ~/.catpaw/llm_config.json (未配置)")
         print(f"      复制 llm_config.example.json 并修改")
     
     print("")
@@ -284,7 +284,7 @@ def cmd_configure(args):
     print("⚙️  LLM 配置信息:")
     print("")
     
-    config_file = Path.home() / '.opentalon' / 'llm_config.json'
+    config_file = Path.home() / '.catpaw' / 'llm_config.json'
     
     if config_file.exists():
         import json
@@ -321,7 +321,7 @@ def main():
     print_banner()
     
     if len(sys.argv) < 2:
-        print("用法：python3 opentalon.py <模式> [参数]")
+        print("用法：python3 catpaw.py <模式> [参数]")
         print("")
         print("模式:")
         print("  cli         命令行交互模式 (推荐)")
@@ -332,9 +332,9 @@ def main():
         print("  config      查看配置")
         print("")
         print("示例:")
-        print("  python3 opentalon.py cli")
-        print("  python3 opentalon.py configure")
-        print("  python3 opentalon.py skills list")
+        print("  python3 catpaw.py cli")
+        print("  python3 catpaw.py configure")
+        print("  python3 catpaw.py skills list")
         print("")
         return
     

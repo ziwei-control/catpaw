@@ -1,4 +1,4 @@
-# 📤 OpenTalon GitHub/Gitee 同步指南
+# 📤 CatPaw GitHub/Gitee 同步指南
 
 **更新时间**: 2026-04-12  
 **版本**: v0.3.0
@@ -7,7 +7,7 @@
 
 ## ✅ Git 仓库已初始化
 
-Git 仓库已在 `/home/admin/projects/opentalon/.git` 初始化完成。
+Git 仓库已在 `/home/admin/projects/catpaw/.git` 初始化完成。
 
 ---
 
@@ -18,17 +18,17 @@ Git 仓库已在 `/home/admin/projects/opentalon/.git` 初始化完成。
 **⚠️ 重要**: 避免与官方项目冲突！
 
 **建议仓库名称**:
-- `opentalon-python` (推荐)
-- `opentalon-md` (Markdown 驱动)
+- `catpaw-python` (推荐)
+- `catpaw-md` (Markdown 驱动)
 - `md-talon`
-- `opentalon-cn`
+- `catpaw-cn`
 
-**不要使用**: `opentalon` (与官方项目同名)
+**不要使用**: `catpaw` (与官方项目同名)
 
 #### GitHub 创建仓库
 
 1. 访问：https://github.com/new
-2. 仓库名：`opentalon-python`
+2. 仓库名：`catpaw-python`
 3. 描述：`Markdown 驱动的本地化自主智能体系统 (Python 版)`
 4. 公开/私有：选择公开
 5. **不要** 初始化 README/.gitignore (我们已有)
@@ -37,7 +37,7 @@ Git 仓库已在 `/home/admin/projects/opentalon/.git` 初始化完成。
 #### Gitee 创建仓库
 
 1. 访问：https://gitee.com/new
-2. 仓库名：`opentalon-python`
+2. 仓库名：`catpaw-python`
 3. 描述：`Markdown 驱动的本地化自主智能体系统 (Python 版)`
 4. 公开/私有：选择公开
 5. **不要** 初始化 README/.gitignore
@@ -48,7 +48,7 @@ Git 仓库已在 `/home/admin/projects/opentalon/.git` 初始化完成。
 ### 步骤 2: 配置远程仓库
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 配置 Git 用户信息
 git config user.email "your-email@example.com"
@@ -56,13 +56,13 @@ git config user.name "Your Name"
 
 # 提交代码
 git add .
-git commit -m "Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统"
+git commit -m "Initial commit: CatPaw v0.3.0 - Markdown 驱动的智能体系统"
 
 # 添加 GitHub 远程 (替换为你的仓库地址)
-git remote add github https://github.com/YOUR_USERNAME/opentalon-python.git
+git remote add github https://github.com/YOUR_USERNAME/catpaw-python.git
 
 # 添加 Gitee 远程 (替换为你的仓库地址)
-git remote add gitee https://gitee.com/YOUR_USERNAME/opentalon-python.git
+git remote add gitee https://gitee.com/YOUR_USERNAME/catpaw-python.git
 
 # 推送到 GitHub
 git push -u github main
@@ -81,10 +81,10 @@ git push -u gitee main
 git remote -v
 
 # 应该显示:
-# github  https://github.com/YOUR_USERNAME/opentalon-python.git (fetch)
-# github  https://github.com/YOUR_USERNAME/opentalon-python.git (push)
-# gitee   https://gitee.com/YOUR_USERNAME/opentalon-python.git (fetch)
-# gitee   https://gitee.com/YOUR_USERNAME/opentalon-python.git (push)
+# github  https://github.com/YOUR_USERNAME/catpaw-python.git (fetch)
+# github  https://github.com/YOUR_USERNAME/catpaw-python.git (push)
+# gitee   https://gitee.com/YOUR_USERNAME/catpaw-python.git (fetch)
+# gitee   https://gitee.com/YOUR_USERNAME/catpaw-python.git (push)
 ```
 
 **访问仓库页面确认代码已上传**。
@@ -96,7 +96,7 @@ git remote -v
 ### 推送更新到两个平台
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 提交更改
 git add .
@@ -152,13 +152,13 @@ git push -u gitee main --force
 
 ### 问题 3: 与官方项目冲突
 
-**解决**: 重命名仓库为 `opentalon-python` 或其他名称。
+**解决**: 重命名仓库为 `catpaw-python` 或其他名称。
 
 ---
 
 ## 📊 项目信息
 
-**项目名称**: OpenTalon (Python 版)  
+**项目名称**: CatPaw (Python 版)  
 **版本**: v0.3.0  
 **许可证**: MIT (建议)  
 **语言**: Python 3.8+  
@@ -181,7 +181,7 @@ git push -u gitee main --force
 ## 📝 推荐仓库描述
 
 ```
-🤖 OpenTalon (Python 版)
+🤖 CatPaw (Python 版)
 
 Markdown 驱动的本地化自主智能体系统
 
@@ -199,7 +199,7 @@ pip3 install flask flask-cors
 
 📖 文档: 详见 QUICKSTART.md
 
-⚠️ 注意: 本项目为 Python 实现，区别于官方的 Go 版本 (github.com/opentalon/opentalon)
+⚠️ 注意: 本项目为 Python 实现，区别于官方的 Go 版本 (github.com/catpaw/catpaw)
 ```
 
 ---

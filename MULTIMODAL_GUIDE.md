@@ -1,4 +1,4 @@
-# 🖼️ OpenTalon 多模态功能指南
+# 🖼️ CatPaw 多模态功能指南
 
 **更新时间**: 2026-04-12  
 **版本**: v0.4.0
@@ -7,7 +7,7 @@
 
 ## 🎉 新增功能
 
-OpenTalon 现在支持多模态交互：
+CatPaw 现在支持多模态交互：
 
 1. **🖼️ 图片识别** - 上传图片，AI 帮你识别和分析
 2. **🎤 音频识别** - 上传音频，AI 转录文字并回应
@@ -48,7 +48,7 @@ curl -X POST http://localhost:6767/api/upload/image \
 {
   "success": true,
   "filename": "20260412_120000_test.jpg",
-  "path": "/home/admin/.opentalon/uploads/image/20260412_120000_test.jpg",
+  "path": "/home/admin/.catpaw/uploads/image/20260412_120000_test.jpg",
   "result": "这是一张美丽的风景照片..."
 }
 ```
@@ -99,7 +99,7 @@ curl -X POST http://localhost:6767/api/upload/audio \
 {
   "success": true,
   "filename": "20260412_120000_voice.mp3",
-  "path": "/home/admin/.opentalon/uploads/audio/20260412_120000_voice.mp3",
+  "path": "/home/admin/.catpaw/uploads/audio/20260412_120000_voice.mp3",
   "transcription": "你好，我想了解一下今天的天气。",
   "response": "根据语音内容，用户想了解今天的天气情况..."
 }
@@ -143,10 +143,10 @@ curl -X POST http://localhost:6767/api/cleanup \
 
 ### 上传目录
 
-文件保存在：`~/.opentalon/uploads/`
+文件保存在：`~/.catpaw/uploads/`
 
 ```
-~/.opentalon/uploads/
+~/.catpaw/uploads/
 ├── image/
 │   ├── 20260412_120000_test.jpg
 │   └── ...
@@ -353,14 +353,14 @@ Content-Type: application/json
 
 ### 数据存储
 
-- 所有上传文件保存在本地 (`~/.opentalon/uploads/`)
+- 所有上传文件保存在本地 (`~/.catpaw/uploads/`)
 - 不会自动上传到云端
 - 定期清理旧文件
 
 ### API Key 安全
 
-- API Key 只保存在本地 (`~/.opentalon/llm_config.json`)
-- 不会发送到 OpenTalon 服务器
+- API Key 只保存在本地 (`~/.catpaw/llm_config.json`)
+- 不会发送到 CatPaw 服务器
 - 仅用于调用 LLM 提供商 API
 
 ### 建议

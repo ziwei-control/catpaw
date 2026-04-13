@@ -1,4 +1,4 @@
-# 🔧 OpenTalon 故障排查指南
+# 🔧 CatPaw 故障排查指南
 
 **更新时间**: 2026-04-12
 
@@ -31,7 +31,7 @@ netstat -tlnp | grep 6767
 
 如果没有运行，启动服务：
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./start.sh
 ```
 
@@ -94,7 +94,7 @@ curl http://localhost:6767
 #### 检查 LLM 配置
 
 ```bash
-cat ~/.opentalon/llm_config.json
+cat ~/.catpaw/llm_config.json
 ```
 
 应该看到类似：
@@ -110,7 +110,7 @@ cat ~/.opentalon/llm_config.json
 #### 重新配置
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -134,7 +134,7 @@ curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions 
 **解决**:
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 修复权限
 chmod +x *.sh *.py
@@ -144,7 +144,7 @@ chmod 755 workspace/ skills/ channels/ gateway/ logs/
 ls -la
 
 # 如果不是当前用户，修改所有者
-# chown -R $USER:$USER /home/admin/projects/opentalon
+# chown -R $USER:$USER /home/admin/projects/catpaw
 ```
 
 ---
@@ -182,7 +182,7 @@ ps aux | grep web_server
 netstat -tlnp | grep 6767
 
 # 检查日志
-tail -f /home/admin/projects/opentalon/logs/web.log
+tail -f /home/admin/projects/catpaw/logs/web.log
 ```
 
 ### 检查网络
@@ -221,14 +221,14 @@ sudo iptables -L -n | grep 6767
 ### 一键启动
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./start.sh
 ```
 
 ### 一键诊断
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 echo "=== 检查进程 ==="
 ps aux | grep web_server | grep -v grep
@@ -249,7 +249,7 @@ tail -20 logs/web.log
 ### 重启服务
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 停止
 ./stop.sh
@@ -287,7 +287,7 @@ cd /home/admin/projects/opentalon
 - [ ] 本地可以访问 (`curl http://localhost:6767`)
 - [ ] 防火墙已开放 (`firewall-cmd --list-all`)
 - [ ] 安全组已配置 (云控制台)
-- [ ] LLM 配置正确 (`cat ~/.opentalon/llm_config.json`)
+- [ ] LLM 配置正确 (`cat ~/.catpaw/llm_config.json`)
 
 ---
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenTalon Web 界面 (黑色主题版)
+CatPaw Web 界面 (黑色主题版)
 支持：
 - 黑色主题 UI
 - 聊天框直接上传图片
@@ -32,11 +32,17 @@ from core.multimodal import (
     SUPPORTED_AUDIO_FORMATS
 )
 
+# 导入网络搜索模块
+from core.web_search import tavily_search, should_search as should_web_search, format_search_context
+
+# 导入实时信息模块
+from core.realtime_info import get_realtime_context, should_search as should_realtime_search
+
 app = Flask(__name__)
 CORS(app)
 
 # 配置文件路径
-CONFIG_FILE = Path.home() / '.opentalon' / 'llm_config.json'
+CONFIG_FILE = Path.home() / '.catpaw' / 'llm_config.json'
 
 # 加载配置
 def load_llm_config():
@@ -134,13 +140,14 @@ def test_config():
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    """文字聊天（支持带图片）"""
+    """文字聊天（支持带图片和网络搜索）"""
     data = request.json
     if not data:
         return jsonify({'success': False, 'error': '消息不能为空'})
     
     message = data.get('message', '')
     image_data = data.get('image', None)  # base64 图片数据
+    use_search = data.get('use_search', 'auto')  # "auto", "on", "off"
     
     config = load_llm_config()
     if not config:
@@ -149,6 +156,26 @@ def chat():
     api_key = config.get('api_key', '')
     base_url = config.get('base_url', 'https://api.openai.com/v1')
     model = config.get('model', 'gpt-3.5-turbo')
+    
+    # 网络搜索上下文
+    search_context = ""
+    
+    # 判断是否需要网络搜索（仅文字消息）
+    if not image_data:
+        # 1. 先检查实时信息（时间、天气等）
+        realtime_context = get_realtime_context(message)
+        if realtime_context:
+            search_context = realtime_context
+            print(f"⏰ 提供实时信息：{message[:50]}...")
+        # 2. 再检查是否需要网络搜索
+        elif use_search == "on" or (use_search == "auto" and should_web_search(message)):
+            print(f"🔍 触发网络搜索：{message[:50]}...")
+            search_result = tavily_search(message, max_results=5)
+            if search_result.get("success"):
+                search_context = format_search_context(search_result)
+                print(f"✅ 搜索成功，获取到 {len(search_result.get('results', []))} 条结果")
+            else:
+                print(f"⚠️ 搜索失败：{search_result.get('error')}")
     
     # 构建消息
     if image_data:
@@ -205,8 +232,24 @@ def chat():
                 elif 'openai' in base_url:
                     model = 'gpt-4o'
     else:
-        # 纯文字
-        messages = [{'role': 'user', 'content': message}]
+        # 纯文字 - 添加搜索上下文
+        if search_context:
+            # 有网络搜索结果，构建带上下文的系统提示
+            system_prompt = f"""你是一个智能助手，可以访问实时网络信息。
+
+【网络搜索结果】
+{search_context}
+
+请根据以上网络搜索结果回答用户问题。如果搜索结果与问题相关，请引用这些信息并标注来源。如果搜索结果不够充分，请结合你的知识进行回答。
+
+"""
+            messages = [
+                {'role': 'system', 'content': system_prompt},
+                {'role': 'user', 'content': message}
+            ]
+        else:
+            # 无搜索结果，普通对话
+            messages = [{'role': 'user', 'content': message}]
     
     # 调用 LLM (非 Qwen 图片情况)
     if not image_data or 'dashscope' not in base_url:
@@ -350,7 +393,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pandaco.asia - AI Assistant</title>
+    <title>CatPaw - AI Assistant</title>
     <style>
         * {
             margin: 0;
@@ -1116,14 +1159,23 @@ HTML_TEMPLATE = """
             
             // 发送请求
             try {
-                const response = await fetch('/api/chat', {
+                const response = await fetch('/chat/api/chat', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                         message: message,
-                        image: currentImageBase64
+                        image: currentImageBase64,
+                        use_search: 'auto'
                     })
                 });
+                
+                // 检查响应类型
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('非 JSON 响应:', text.substring(0, 200));
+                    throw new Error('服务器返回了非 JSON 响应，可能是网络错误');
+                }
                 
                 const data = await response.json();
                 
@@ -1308,7 +1360,7 @@ HTML_TEMPLATE = """
             alertDiv.innerHTML = '<div class="alert alert-info">🔍 Testing connection...</div>';
             
             try {
-                const response = await fetch('/api/config/test', {
+                const response = await fetch('/chat/api/config/test', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(config)
@@ -1335,7 +1387,7 @@ HTML_TEMPLATE = """
             alertDiv.innerHTML = '<div class="alert alert-info">💾 Saving...</div>';
             
             try {
-                const response = await fetch('/api/config', {
+                const response = await fetch('/chat/api/config', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(config)
@@ -1409,7 +1461,7 @@ HTML_TEMPLATE = """
         // 页面加载时获取配置
         window.onload = async function() {
             try {
-                const response = await fetch('/api/config');
+                const response = await fetch('/chat/api/config');
                 const data = await response.json();
                 
                 if (data.success && data.config && data.config.provider) {
@@ -1443,7 +1495,7 @@ def index():
 if __name__ == '__main__':
     import argparse
     
-    parser = argparse.ArgumentParser(description='OpenTalon Web Server')
+    parser = argparse.ArgumentParser(description='CatPaw Web Server')
     parser.add_argument('--port', type=int, default=6767, help='监听端口')
     parser.add_argument('--host', type=str, default='0.0.0.0', help='监听地址')
     parser.add_argument('--debug', action='store_true', help='调试模式')
@@ -1452,7 +1504,7 @@ if __name__ == '__main__':
     
     print(f"""
 ╔═══════════════════════════════════════╗
-║     OpenTalon Web Server              ║
+║     CatPaw Web Server              ║
 ║     Black Theme Edition               ║
 ╚═══════════════════════════════════════╝
 
@@ -1460,7 +1512,7 @@ if __name__ == '__main__':
    Local: http://localhost:{args.port}
    LAN: http://{args.host}:{args.port}
 
-📁 Upload Dir: {Path.home() / '.opentalon' / 'uploads'}
+📁 Upload Dir: {Path.home() / '.catpaw' / 'uploads'}
 
 🚀 Starting server...
 """)

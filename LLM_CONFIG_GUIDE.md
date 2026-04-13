@@ -1,12 +1,12 @@
 ---
-# OpenTalon LLM 配置指南
+# CatPaw LLM 配置指南
 # 配置你的智能体大脑
 ---
 
 ## 📍 配置文件位置
 
-**Linux/macOS**: `~/.opentalon/llm_config.json`  
-**Windows**: `%USERPROFILE%\.opentalon\llm_config.json`
+**Linux/macOS**: `~/.catpaw/llm_config.json`  
+**Windows**: `%USERPROFILE%\.catpaw\llm_config.json`
 
 ---
 
@@ -111,8 +111,8 @@
 ## ✅ 验证配置
 
 ```bash
-cd /home/admin/projects/opentalon
-python3 opentalon.py config
+cd /home/admin/projects/catpaw
+python3 catpaw.py config
 ```
 
 如果配置正确，会显示:
@@ -169,7 +169,7 @@ python3 opentalon.py config
 ## 📝 示例配置目录
 
 ```
-~/.opentalon/
+~/.catpaw/
 ├── llm_config.json      # LLM 配置
 ├── cli_history          # CLI 历史记录
 └── logs/                # 日志目录

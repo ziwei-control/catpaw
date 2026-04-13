@@ -1,4 +1,4 @@
-# ✅ OpenTalon 同步完成总结
+# ✅ CatPaw 同步完成总结
 
 **同步时间**: 2026-04-12  
 **版本**: v0.3.0
@@ -9,14 +9,14 @@
 
 | 平台 | 状态 | 仓库地址 |
 |------|------|---------|
-| **GitHub** | ✅ 成功 | https://github.com/ziwei-control/opentalon |
-| **Gitee** | ⚠️ 需手动 | https://gitee.com/pandac0/opentalon |
+| **GitHub** | ✅ 成功 | https://github.com/ziwei-control/catpaw |
+| **Gitee** | ⚠️ 需手动 | https://gitee.com/pandac0/catpaw |
 
 ---
 
 ## ✅ GitHub 同步完成
 
-**仓库**: https://github.com/ziwei-control/opentalon
+**仓库**: https://github.com/ziwei-control/catpaw
 
 **状态**:
 - ✅ 仓库已创建
@@ -26,14 +26,14 @@
 
 **访问**: 
 ```
-https://github.com/ziwei-control/opentalon
+https://github.com/ziwei-control/catpaw
 ```
 
 ---
 
 ## ⚠️ Gitee 同步需手动推送
 
-**仓库**: https://gitee.com/pandac0/opentalon
+**仓库**: https://gitee.com/pandac0/catpaw
 
 **状态**:
 - ✅ 仓库已创建
@@ -58,17 +58,17 @@ https://github.com/ziwei-control/opentalon
 
 5. **推送**:
    ```bash
-   cd /home/admin/projects/opentalon
+   cd /home/admin/projects/catpaw
    git push -u gitee main
    ```
 
 ### 方式 2: 使用 HTTPS 推送
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 配置远程
-git remote set-url gitee https://891b0140032788f9c6652f79eb9edaca@gitee.com/pandac0/opentalon.git
+git remote set-url gitee https://891b0140032788f9c6652f79eb9edaca@gitee.com/pandac0/catpaw.git
 
 # 推送
 git push -u gitee main
@@ -81,7 +81,7 @@ git push -u gitee main
 ### 已推送文件 (36 个)
 
 **核心程序**:
-- ✅ opentalon.py (主程序)
+- ✅ catpaw.py (主程序)
 - ✅ web_server.py (Web 服务器)
 - ✅ configure_llm.py (配置工具)
 - ✅ start.sh / stop.sh (启动脚本)
@@ -93,7 +93,7 @@ git push -u gitee main
 - ✅ CLOUD_MODEL_SETUP.md
 - ✅ PUBLIC_ACCESS_GUIDE.md
 - ✅ TROUBLESHOOTING.md
-- ✅ OPENTALON_TIMELINE.md
+- ✅ CATPAW_TIMELINE.md
 
 **配置**:
 - ✅ channels/cli.yaml
@@ -121,7 +121,7 @@ git push -u gitee main
 ### 推送更新到 GitHub
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 提交更改
 git add .
@@ -152,10 +152,10 @@ git remote -v
 
 **输出**:
 ```
-origin  https://github.com/ziwei-control/opentalon.git (fetch)
-origin  https://github.com/ziwei-control/opentalon.git (push)
-gitee   https://gitee.com/pandac0/opentalon.git (fetch)
-gitee   https://gitee.com/pandac0/opentalon.git (push)
+origin  https://github.com/ziwei-control/catpaw.git (fetch)
+origin  https://github.com/ziwei-control/catpaw.git (push)
+gitee   https://gitee.com/pandac0/catpaw.git (fetch)
+gitee   https://gitee.com/pandac0/catpaw.git (push)
 ```
 
 ### 分支信息
@@ -214,8 +214,8 @@ git push -u gitee main
 
 **方式 B - HTTPS 推送**:
 ```bash
-cd /home/admin/projects/opentalon
-git remote set-url gitee https://891b0140032788f9c6652f79eb9edaca@gitee.com/pandac0/opentalon.git
+cd /home/admin/projects/catpaw
+git remote set-url gitee https://891b0140032788f9c6652f79eb9edaca@gitee.com/pandac0/catpaw.git
 git push -u gitee main --force
 ```
 
@@ -284,7 +284,7 @@ ssh -T git@github.com
 
 ---
 
-**GitHub**: https://github.com/ziwei-control/opentalon ✅  
-**Gitee**: https://gitee.com/pandac0/opentalon ⏳
+**GitHub**: https://github.com/ziwei-control/catpaw ✅  
+**Gitee**: https://gitee.com/pandac0/catpaw ⏳
 
 **最后更新**: 2026-04-12

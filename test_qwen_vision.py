@@ -6,7 +6,7 @@ import base64
 import json
 
 # 读取配置
-with open('/home/admin/.opentalon/llm_config.json', 'r') as f:
+with open('/home/admin/.catpaw/llm_config.json', 'r') as f:
     config = json.load(f)
 
 api_key = config.get('api_key', '')

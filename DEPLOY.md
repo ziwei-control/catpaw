@@ -1,4 +1,4 @@
-# 🚀 OpenTalon 一键部署指南
+# 🚀 CatPaw 一键部署指南
 
 **更新时间**: 2026-04-12  
 **版本**: v0.3.0
@@ -11,18 +11,18 @@
 
 ```bash
 # 一键部署脚本
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 
 # 或使用 GitHub
-curl -fsSL https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ziwei-control/catpaw/main/deploy.sh | bash
 ```
 
 ### 方式 2: 手动部署
 
 ```bash
 # 1. 克隆仓库
-git clone https://gitee.com/pandac0/opentalon.git
-cd opentalon
+git clone https://gitee.com/pandac0/catpaw.git
+cd catpaw
 
 # 2. 运行部署脚本
 chmod +x deploy.sh
@@ -37,10 +37,10 @@ chmod +x deploy.sh
 
 ```bash
 # 从 Gitee 下载 (国内推荐)
-wget https://gitee.com/pandac0/opentalon/raw/main/deploy.sh
+wget https://gitee.com/pandac0/catpaw/raw/main/deploy.sh
 
 # 或从 GitHub 下载
-wget https://raw.githubusercontent.com/ziwei-control/opentalon/main/deploy.sh
+wget https://raw.githubusercontent.com/ziwei-control/catpaw/main/deploy.sh
 ```
 
 ### 步骤 2: 执行部署
@@ -70,7 +70,7 @@ chmod +x deploy.sh
 
 ```bash
 # 自定义安装目录
-INSTALL_DIR=/opt/opentalon ./deploy.sh
+INSTALL_DIR=/opt/catpaw ./deploy.sh
 
 # 指定代码源
 REPO_SOURCE=github ./deploy.sh  # GitHub
@@ -88,7 +88,7 @@ yes | ./deploy.sh
 
 # 或使用环境变量
 export REPO_SOURCE=gitee
-export INSTALL_DIR=/home/admin/projects/opentalon
+export INSTALL_DIR=/home/admin/projects/catpaw
 ./deploy.sh
 ```
 
@@ -113,7 +113,7 @@ export INSTALL_DIR=/home/admin/projects/opentalon
 # 点击 ⚙️ 配置
 
 # 方式 2: 命令行配置
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -122,7 +122,7 @@ python3 configure_llm.py
 如果部署时未配置开机自启：
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 sudo ./deploy.sh  # 重新运行，选择配置服务
 ```
 
@@ -130,34 +130,34 @@ sudo ./deploy.sh  # 重新运行，选择配置服务
 
 ```bash
 # 创建服务文件
-sudo cp opentalon.service.template /etc/systemd/system/opentalon.service
+sudo cp catpaw.service.template /etc/systemd/system/catpaw.service
 
 # 替换变量
-sudo sed -i "s/%USER%/$USER/g" /etc/systemd/system/opentalon.service
-sudo sed -i "s|%INSTALL_DIR%|$(pwd)|g" /etc/systemd/system/opentalon.service
-sudo sed -i "s|%PYTHON%|$(which python3)|g" /etc/systemd/system/opentalon.service
+sudo sed -i "s/%USER%/$USER/g" /etc/systemd/system/catpaw.service
+sudo sed -i "s|%INSTALL_DIR%|$(pwd)|g" /etc/systemd/system/catpaw.service
+sudo sed -i "s|%PYTHON%|$(which python3)|g" /etc/systemd/system/catpaw.service
 
 # 启用服务
 sudo systemctl daemon-reload
-sudo systemctl enable opentalon
-sudo systemctl start opentalon
+sudo systemctl enable catpaw
+sudo systemctl start catpaw
 ```
 
 ---
 
-## 🔄 更新 OpenTalon
+## 🔄 更新 CatPaw
 
 ### 一键更新
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./update.sh
 ```
 
 ### 手动更新
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 拉取更新
 git pull
@@ -177,31 +177,31 @@ pip3 install -r requirements.txt
 ### 查看状态
 
 ```bash
-sudo systemctl status opentalon
+sudo systemctl status catpaw
 ```
 
 ### 启动/停止/重启
 
 ```bash
-sudo systemctl start opentalon
-sudo systemctl stop opentalon
-sudo systemctl restart opentalon
+sudo systemctl start catpaw
+sudo systemctl stop catpaw
+sudo systemctl restart catpaw
 ```
 
 ### 查看日志
 
 ```bash
 # 系统日志
-sudo journalctl -u opentalon -f
+sudo journalctl -u catpaw -f
 
 # 应用日志
-tail -f /home/admin/projects/opentalon/logs/web.log
+tail -f /home/admin/projects/catpaw/logs/web.log
 ```
 
 ### 禁用开机自启
 
 ```bash
-sudo systemctl disable opentalon
+sudo systemctl disable catpaw
 ```
 
 ---
@@ -239,7 +239,7 @@ sudo yum install nginx -y  # CentOS
 sudo apt install nginx -y  # Ubuntu
 
 # 配置反向代理
-sudo cat > /etc/nginx/conf.d/opentalon.conf << 'EOF'
+sudo cat > /etc/nginx/conf.d/catpaw.conf << 'EOF'
 server {
     listen 80;
     server_name your-domain.com;
@@ -314,16 +314,16 @@ pip3 install flask flask-cors requests
 ## 📁 目录结构
 
 ```
-/home/admin/projects/opentalon/
+/home/admin/projects/catpaw/
 ├── deploy.sh              # 部署脚本 ⭐
 ├── update.sh              # 更新脚本 ⭐
 ├── start.sh               # 启动脚本
 ├── stop.sh                # 停止脚本
-├── opentalon.service.template  # systemd 模板
+├── catpaw.service.template  # systemd 模板
 ├── requirements.txt       # Python 依赖
 ├── .env.example          # 环境变量示例
 ├── web_server.py         # Web 服务器
-├── opentalon.py          # 主程序
+├── catpaw.py          # 主程序
 ├── workspace/            # 工作空间
 ├── logs/                 # 日志目录
 └── ...
@@ -337,23 +337,23 @@ pip3 install flask flask-cors requests
 
 ```bash
 # 使用专用用户
-sudo useradd -m opentalon
-sudo usermod -aG sudo opentalon
+sudo useradd -m catpaw
+sudo usermod -aG sudo catpaw
 
-# 切换到 opentalon 用户
-sudo su - opentalon
+# 切换到 catpaw 用户
+sudo su - catpaw
 
 # 部署
-cd /home/opentalon
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+cd /home/catpaw
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 ```
 
 ### 2. 备份配置
 
 ```bash
 # 备份重要配置
-tar -czf opentalon-backup-$(date +%Y%m%d).tar.gz \
-    ~/.opentalon/llm_config.json \
+tar -czf catpaw-backup-$(date +%Y%m%d).tar.gz \
+    ~/.catpaw/llm_config.json \
     workspace/
 ```
 
@@ -361,19 +361,19 @@ tar -czf opentalon-backup-$(date +%Y%m%d).tar.gz \
 
 ```bash
 # 创建监控脚本
-cat > /usr/local/bin/check-opentalon.sh << 'EOF'
+cat > /usr/local/bin/check-catpaw.sh << 'EOF'
 #!/bin/bash
 if ! pgrep -f "web_server.py.*6767" > /dev/null; then
-    echo "OpenTalon 服务异常，尝试重启..."
-    sudo systemctl restart opentalon
-    echo "$(date): OpenTalon restarted" >> /var/log/opentalon-monitor.log
+    echo "CatPaw 服务异常，尝试重启..."
+    sudo systemctl restart catpaw
+    echo "$(date): CatPaw restarted" >> /var/log/catpaw-monitor.log
 fi
 EOF
 
-chmod +x /usr/local/bin/check-opentalon.sh
+chmod +x /usr/local/bin/check-catpaw.sh
 
 # 添加到 crontab
-(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/check-opentalon.sh") | crontab -
+(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/check-catpaw.sh") | crontab -
 ```
 
 ---
@@ -389,8 +389,8 @@ chmod +x /usr/local/bin/check-opentalon.sh
 
 ### 社区
 
-- **GitHub**: https://github.com/ziwei-control/opentalon
-- **Gitee**: https://gitee.com/pandac0/opentalon
+- **GitHub**: https://github.com/ziwei-control/catpaw
+- **Gitee**: https://gitee.com/pandac0/catpaw
 - **Issues**: 提交问题反馈
 
 ---

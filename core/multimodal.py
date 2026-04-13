@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenTalon 多模态处理模块
+CatPaw 多模态处理模块
 支持：
 - 图片识别 (视觉模型)
 - 音频识别 (语音转文字 + 回应)
@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime
 
 # 上传目录
-UPLOAD_DIR = Path.home() / '.opentalon' / 'uploads'
+UPLOAD_DIR = Path.home() / '.catpaw' / 'uploads'
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # 支持的格式
@@ -25,7 +25,7 @@ SUPPORTED_AUDIO_FORMATS = ['.mp3', '.wav', '.ogg', '.m4a', '.flac', '.aac']
 
 def load_llm_config():
     """加载 LLM 配置"""
-    config_file = Path.home() / '.opentalon' / 'llm_config.json'
+    config_file = Path.home() / '.catpaw' / 'llm_config.json'
     if config_file.exists():
         with open(config_file, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -345,7 +345,7 @@ def cleanup_old_files(days=7):
 
 # 测试函数
 if __name__ == '__main__':
-    print("OpenTalon 多模态模块")
+    print("CatPaw 多模态模块")
     print(f"上传目录：{UPLOAD_DIR}")
     print(f"支持的图片格式：{SUPPORTED_IMAGE_FORMATS}")
     print(f"支持的音频格式：{SUPPORTED_AUDIO_FORMATS}")

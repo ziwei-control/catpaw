@@ -147,13 +147,13 @@ def create_llm_client(config_path: Optional[str] = None) -> LLMClient:
     根据配置创建 LLM 客户端
     
     Args:
-        config_path: 配置文件路径，默认使用 ~/.opentalon/llm_config.json
+        config_path: 配置文件路径，默认使用 ~/.catpaw/llm_config.json
     
     Returns:
         LLMClient 实例
     """
     if config_path is None:
-        config_path = os.path.expanduser('~/.opentalon/llm_config.json')
+        config_path = os.path.expanduser('~/.catpaw/llm_config.json')
     
     # 加载配置
     if os.path.exists(config_path):
@@ -253,7 +253,7 @@ def build_messages(user_input: str, context: str, system_prompt: str = "") -> Li
 if __name__ == "__main__":
     import sys
     
-    print("🤖 OpenTalon LLM 接口测试")
+    print("🤖 CatPaw LLM 接口测试")
     print("")
     
     # 创建客户端

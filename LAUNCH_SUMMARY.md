@@ -1,7 +1,7 @@
-# 🎉 OpenTalon 项目启动完成！
+# 🎉 CatPaw 项目启动完成！
 
 **创建时间**: 2026-04-09  
-**项目位置**: `/home/admin/projects/opentalon/`
+**项目位置**: `/home/admin/projects/catpaw/`
 
 ---
 
@@ -10,9 +10,9 @@
 ### 项目结构
 
 ```
-opentalon/
+catpaw/
 ├── README.md                 # 项目说明
-├── opentalon.py             # 主程序入口
+├── catpaw.py             # 主程序入口
 ├── start.sh                 # 启动脚本
 ├── workspace/               # 工作空间
 │   ├── SOUL.md             # 智能体人格定义
@@ -44,10 +44,10 @@ opentalon/
 
 ### 可运行功能
 
-- ✅ `python3 opentalon.py cli` - CLI 交互模式
-- ✅ `python3 opentalon.py config` - 查看配置状态
-- ✅ `python3 opentalon.py skills list` - 列出技能
-- ✅ `python3 opentalon.py memory` - 查看记忆
+- ✅ `python3 catpaw.py cli` - CLI 交互模式
+- ✅ `python3 catpaw.py config` - 查看配置状态
+- ✅ `python3 catpaw.py skills list` - 列出技能
+- ✅ `python3 catpaw.py memory` - 查看记忆
 - ✅ `./start.sh` - 交互式启动
 
 ---
@@ -84,26 +84,26 @@ opentalon/
 ### 1. 查看配置状态
 
 ```bash
-cd /home/admin/projects/opentalon
-python3 opentalon.py config
+cd /home/admin/projects/catpaw
+python3 catpaw.py config
 ```
 
 ### 2. 启动 CLI
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ### 3. 查看技能
 
 ```bash
-python3 opentalon.py skills list
+python3 catpaw.py skills list
 ```
 
 ### 4. 查看记忆
 
 ```bash
-python3 opentalon.py memory
+python3 catpaw.py memory
 ```
 
 ---
@@ -133,7 +133,7 @@ python3 opentalon.py memory
 
 ## 📊 与 CoPaw 对比
 
-| 特性 | CoPaw | OpenTalon |
+| 特性 | CoPaw | CatPaw |
 |------|-------|-----------|
 | **配置文件** | 混合 | 解耦 (灵魂三件套) |
 | **用户模型** | PROFILE.md 内嵌 | USER.md 独立 |

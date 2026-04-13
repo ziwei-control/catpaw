@@ -51,7 +51,7 @@ Web 界面新增 **⚙️ 配置** 标签页：
    - 验证 API Key 有效性
 
 5. **保存配置**
-   - 保存到 `~/.opentalon/llm_config.json`
+   - 保存到 `~/.catpaw/llm_config.json`
 
 ---
 
@@ -81,7 +81,7 @@ Web 界面新增 **⚙️ 配置** 标签页：
 ### 步骤 1: 启动服务
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 安装 Flask (首次需要)
 pip3 install flask flask-cors
@@ -253,11 +253,11 @@ sudo ufw allow 6767/tcp
 
 ```bash
 # 检查目录权限
-ls -la ~/.opentalon/
+ls -la ~/.catpaw/
 
 # 创建目录
-mkdir -p ~/.opentalon
-chmod 755 ~/.opentalon
+mkdir -p ~/.catpaw
+chmod 755 ~/.catpaw
 ```
 
 ---

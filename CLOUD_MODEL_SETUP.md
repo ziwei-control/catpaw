@@ -1,6 +1,6 @@
-# ⚡ OpenTalon 云模型快速配置指南
+# ⚡ CatPaw 云模型快速配置指南
 
-**配置文件位置**: `~/.opentalon/llm_config.json`
+**配置文件位置**: `~/.catpaw/llm_config.json`
 
 ---
 
@@ -9,7 +9,7 @@
 ### 方式 1: 使用配置工具 (推荐)
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -18,7 +18,7 @@ python3 configure_llm.py
 ### 方式 2: 手动编辑配置文件
 
 ```bash
-vim ~/.opentalon/llm_config.json
+vim ~/.catpaw/llm_config.json
 ```
 
 ---
@@ -135,8 +135,8 @@ vim ~/.opentalon/llm_config.json
 ### 1. 查看配置状态
 
 ```bash
-cd /home/admin/projects/opentalon
-python3 opentalon.py config
+cd /home/admin/projects/catpaw
+python3 catpaw.py config
 ```
 
 ### 2. 测试连接
@@ -149,7 +149,7 @@ python3 configure_llm.py
 ### 3. 启动 CLI 测试
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 输入一个问题测试是否正常工作。
@@ -226,9 +226,9 @@ python3 opentalon.py cli
 
 ## 📞 获取帮助
 
-- **文档**: `/home/admin/projects/opentalon/LLM_CONFIG_GUIDE.md`
+- **文档**: `/home/admin/projects/catpaw/LLM_CONFIG_GUIDE.md`
 - **配置工具**: `python3 configure_llm.py`
-- **项目 README**: `/home/admin/projects/opentalon/README.md`
+- **项目 README**: `/home/admin/projects/catpaw/README.md`
 
 ---
 

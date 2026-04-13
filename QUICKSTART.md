@@ -1,4 +1,4 @@
-# 🚀 OpenTalon 快速使用指南
+# 🚀 CatPaw 快速使用指南
 
 **更新时间**: 2026-04-12  
 **版本**: v0.2.0
@@ -24,7 +24,7 @@
 **支持 Kimi2.5 和 Qwen3.5!**
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -65,7 +65,7 @@ python3 configure_llm.py
 ### 步骤 2: 验证配置
 
 ```bash
-python3 opentalon.py configure
+python3 catpaw.py configure
 ```
 
 看到 `✅` 表示配置成功。
@@ -77,7 +77,7 @@ python3 opentalon.py configure
 #### 方式 A: CLI 命令行
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 #### 方式 B: Web 网页访问 ⭐ 推荐
@@ -102,7 +102,7 @@ python3 web_server.py
 ### 启动 Web 服务
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 方式 1: 使用启动脚本
 ./start_web.sh
@@ -137,7 +137,7 @@ python3 web_server.py --host 0.0.0.0 --port 8080
 ### 启动
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ### 内部命令
@@ -157,7 +157,7 @@ python3 opentalon.py cli
 
 ### 云模型配置
 
-**位置**: `~/.opentalon/llm_config.json`
+**位置**: `~/.catpaw/llm_config.json`
 
 **示例 (Kimi2.5)**:
 ```json
@@ -206,23 +206,23 @@ vim workspace/USER.md
 python3 configure_llm.py
 
 # 查看 LLM 配置
-python3 opentalon.py configure
+python3 catpaw.py configure
 
 # 查看项目配置
-python3 opentalon.py config
+python3 catpaw.py config
 
 # CLI 交互
-python3 opentalon.py cli
+python3 catpaw.py cli
 
 # Web 服务
 ./start_web.sh
 python3 web_server.py
 
 # 列出技能
-python3 opentalon.py skills list
+python3 catpaw.py skills list
 
 # 查看记忆
-python3 opentalon.py memory
+python3 catpaw.py memory
 
 # 快速启动 (CLI)
 ./setup_and_start.sh
@@ -256,7 +256,7 @@ python3 opentalon.py memory
 ### CLI 示例
 
 ```bash
-$ python3 opentalon.py cli
+$ python3 catpaw.py cli
 
 🤖 Talon > 你好
 
@@ -309,7 +309,7 @@ python3 configure_llm.py
 
 检查 API Key 是否正确:
 ```bash
-cat ~/.opentalon/llm_config.json
+cat ~/.catpaw/llm_config.json
 ```
 
 ### 问题 4: Web 无法访问
@@ -339,7 +339,7 @@ netstat -tlnp | grep 8080
 
 **需要帮助？**
 
-运行 `python3 opentalon.py` 查看所有可用命令。
+运行 `python3 catpaw.py` 查看所有可用命令。
 
 **项目状态**: 🚧 开发中  
 **最后更新**: 2026-04-12

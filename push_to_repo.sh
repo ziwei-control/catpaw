@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenTalon 推送到 GitHub 和 Gitee
+# CatPaw 推送到 GitHub 和 Gitee
 
 set -e
 
@@ -7,7 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo "======================================"
-echo "🚀 OpenTalon 推送到 GitHub & Gitee"
+echo "🚀 CatPaw 推送到 GitHub & Gitee"
 echo "======================================"
 echo ""
 
@@ -31,12 +31,12 @@ echo ""
 
 # GitHub 配置
 GITHUB_USER="${GITHUB_USER:-admin}"
-GITHUB_REPO="${GITHUB_REPO:-opentalon}"
+GITHUB_REPO="${GITHUB_REPO:-catpaw}"
 GITHUB_URL="git@github.com:${GITHUB_USER}/${GITHUB_REPO}.git"
 
 # Gitee 配置
 GITEE_USER="${GITEE_USER:-admin}"
-GITEE_REPO="${GITEE_REPO:-opentalon}"
+GITEE_REPO="${GITEE_REPO:-catpaw}"
 GITEE_URL="git@gitee.com:${GITEE_USER}/${GITEE_REPO}.git"
 
 echo "======================================"

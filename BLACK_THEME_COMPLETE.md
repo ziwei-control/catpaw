@@ -1,4 +1,4 @@
-# ✅ OpenTalon 黑色主题 UI 完成
+# ✅ CatPaw 黑色主题 UI 完成
 
 **完成时间**: 2026-04-12 13:30  
 **版本**: v0.4.1  
@@ -269,8 +269,8 @@ ca55220 feat: 黑色主题 UI + 聊天框图片上传
 
 | 平台 | 状态 | 地址 |
 |------|------|------|
-| **GitHub** | ✅ | https://github.com/ziwei-control/opentalon |
-| **Gitee** | ✅ | https://gitee.com/pandac0/opentalon |
+| **GitHub** | ✅ | https://github.com/ziwei-control/catpaw |
+| **Gitee** | ✅ | https://gitee.com/pandac0/catpaw |
 
 ---
 
@@ -285,7 +285,7 @@ ca55220 feat: 黑色主题 UI + 聊天框图片上传
 
 ## 🎉 总结
 
-OpenTalon v0.4.1 全新黑色主题：
+CatPaw v0.4.1 全新黑色主题：
 
 1. ✅ **纯黑背景** - `#0a0a0a` 护眼配色
 2. ✅ **亮绿文字** - `#00ff00` 黑客帝国风格
@@ -297,8 +297,8 @@ OpenTalon v0.4.1 全新黑色主题：
 8. ✅ **响应式** - 适配桌面和移动端
 
 **仓库已同步**:
-- GitHub: https://github.com/ziwei-control/opentalon ✅
-- Gitee: https://gitee.com/pandac0/opentalon ✅
+- GitHub: https://github.com/ziwei-control/catpaw ✅
+- Gitee: https://gitee.com/pandac0/catpaw ✅
 
 ---
 

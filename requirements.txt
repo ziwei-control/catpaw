@@ -1,4 +1,4 @@
-# OpenTalon 依赖
+# CatPaw 依赖
 
 # Web 服务器
 flask>=2.3.0

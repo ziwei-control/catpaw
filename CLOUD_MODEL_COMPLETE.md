@@ -1,7 +1,7 @@
-# ✅ OpenTalon 云模型配置完成
+# ✅ CatPaw 云模型配置完成
 
 **完成时间**: 2026-04-09  
-**配置位置**: `~/.opentalon/llm_config.json`
+**配置位置**: `~/.catpaw/llm_config.json`
 
 ---
 
@@ -13,7 +13,7 @@
 |------|------|------|
 | **云模型配置** | ✅ 完成 | 支持 6+ 云模型提供商 |
 | **配置工具** | ✅ 完成 | `configure_llm.py` 交互式配置 |
-| **配置查看** | ✅ 完成 | `opentalon.py configure` |
+| **配置查看** | ✅ 完成 | `catpaw.py configure` |
 | **快速启动** | ✅ 完成 | `setup_and_start.sh` |
 | **配置文档** | ✅ 完成 | `CLOUD_MODEL_SETUP.md` |
 
@@ -33,13 +33,13 @@
 ## 📁 项目文件结构
 
 ```
-opentalon/
+catpaw/
 ├── README.md                 # 项目说明 (已更新)
 ├── CLOUD_MODEL_SETUP.md      # 云模型配置指南 ⭐ 新增
 ├── LLM_CONFIG_GUIDE.md       # LLM 配置详细说明
 ├── configure_llm.py          # 配置工具 ⭐ 新增
 ├── setup_and_start.sh        # 快速启动脚本 ⭐ 新增
-├── opentalon.py              # 主程序 (已更新 configure 命令)
+├── catpaw.py              # 主程序 (已更新 configure 命令)
 ├── start.sh                  # 启动脚本
 │
 ├── workspace/                # 工作空间
@@ -70,40 +70,40 @@ opentalon/
 ### 1. 配置云模型
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 
 # 交互式配置 (推荐)
 python3 configure_llm.py
 
 # 或手动编辑
-vim ~/.opentalon/llm_config.json
+vim ~/.catpaw/llm_config.json
 ```
 
 ### 2. 查看配置
 
 ```bash
-python3 opentalon.py configure
+python3 catpaw.py configure
 ```
 
 输出示例:
 ```
 ⚙️  LLM 配置信息:
 
-  ✅ 配置文件：/home/admin/.opentalon/llm_config.json
+  ✅ 配置文件：/home/admin/.catpaw/llm_config.json
   ✅ Provider: openai
   ✅ Model: gpt-3.5-turbo
   ✅ Base URL: https://api.openai.com/v1
   ✅ API Key: sk-your...here
 ```
 
-### 3. 启动 OpenTalon
+### 3. 启动 CatPaw
 
 ```bash
 # 方式 1: 快速启动脚本
 ./setup_and_start.sh
 
 # 方式 2: 直接启动
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ---
@@ -159,11 +159,11 @@ python3 opentalon.py cli
 | 命令 | 功能 |
 |------|------|
 | `python3 configure_llm.py` | 交互式配置云模型 |
-| `python3 opentalon.py configure` | 查看当前配置 |
-| `python3 opentalon.py cli` | 启动 CLI 交互 |
-| `python3 opentalon.py config` | 查看项目配置 |
-| `python3 opentalon.py skills list` | 列出技能 |
-| `python3 opentalon.py memory` | 查看记忆 |
+| `python3 catpaw.py configure` | 查看当前配置 |
+| `python3 catpaw.py cli` | 启动 CLI 交互 |
+| `python3 catpaw.py config` | 查看项目配置 |
+| `python3 catpaw.py skills list` | 列出技能 |
+| `python3 catpaw.py memory` | 查看记忆 |
 | `./setup_and_start.sh` | 一键配置并启动 |
 
 ---

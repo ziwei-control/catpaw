@@ -99,7 +99,7 @@ http://localhost:6767
 运行测试脚本：
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 check_qwen_config.py
 ```
 

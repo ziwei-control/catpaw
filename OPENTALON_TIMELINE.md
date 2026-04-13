@@ -1,10 +1,10 @@
-# OpenTalon 项目时间线对比
+# CatPaw 项目时间线对比
 
 ---
 
-## 📊 两个 OpenTalon 项目对比
+## 📊 两个 CatPaw 项目对比
 
-| 项目 | 本地 OpenTalon | GitHub OpenTalon |
+| 项目 | 本地 CatPaw | GitHub CatPaw |
 |------|--------------|-----------------|
 | **创建时间** | **2026-04-09** | **2026-02-21** |
 | **创建地点** | 中国 (本地开发) | GitHub 公开仓库 |
@@ -19,31 +19,31 @@
 
 ## 🕐 时间线
 
-### GitHub OpenTalon (官方)
+### GitHub CatPaw (官方)
 
 ```
 2026-02-21  ━━ 项目创建 (GitHub)
     │
     ├── 使用 Go 语言从头构建
     ├── 定位为 OpenClaw 的替代方案
-    ├── 由 opentalon 组织维护
+    ├── 由 catpaw 组织维护
     │
 2026-04-10  ━━ 最后更新
 ```
 
-**仓库**: https://github.com/opentalon/opentalon  
-**组织**: https://github.com/opentalon  
+**仓库**: https://github.com/catpaw/catpaw  
+**组织**: https://github.com/catpaw  
 **Stars**: 4 ⭐  
 **语言**: Go
 
 ---
 
-### 本地 OpenTalon (本项目)
+### 本地 CatPaw (本项目)
 
 ```
 2026-04-09  ━━ 项目创建 (本地)
     │
-    ├── 受 OpenTalon 设计理念启发
+    ├── 受 CatPaw 设计理念启发
     ├── 使用 Python 快速原型
     ├── Markdown 驱动灵魂系统
     ├── 独立开发，非官方分支
@@ -51,7 +51,7 @@
 2026-04-12  ━━ 当前时间
 ```
 
-**位置**: `/home/admin/projects/opentalon/`  
+**位置**: `/home/admin/projects/catpaw/`  
 **语言**: Python  
 **状态**: 开发中
 
@@ -59,7 +59,7 @@
 
 ## 🔍 关系说明
 
-### 本地 OpenTalon 与 GitHub OpenTalon 的关系
+### 本地 CatPaw 与 GitHub CatPaw 的关系
 
 **❌ 不是**:
 - ❌ 官方分支
@@ -68,7 +68,7 @@
 
 **✅ 是**:
 - ✅ 独立开发项目
-- ✅ 受 OpenTalon 设计理念启发
+- ✅ 受 CatPaw 设计理念启发
 - ✅ 同名但不同实现
 - ✅ Python vs Go 不同技术栈
 
@@ -77,10 +77,10 @@
 本地项目创建时 (2026-04-09)：
 - 已知 GitHub 上有同名项目 (2026-02-21 创建)
 - 但本地项目是独立开发
-- "OpenTalon" 名字是独立选择的
+- "CatPaw" 名字是独立选择的
 
 **建议**: 
-- 如需区分，可重命名为 `opentalon-python` 或 `opentalon-cn`
+- 如需区分，可重命名为 `catpaw-python` 或 `catpaw-cn`
 - 或联系 GitHub 项目所有者讨论合作
 
 ---
@@ -99,12 +99,12 @@
 
 ### 设计理念
 
-**GitHub OpenTalon**:
+**GitHub CatPaw**:
 - 从 Ground Up 用 Go 重构
 - 作为 OpenClaw 的替代方案
 - 强调性能和稳定性
 
-**本地 OpenTalon**:
+**本地 CatPaw**:
 - Markdown 驱动灵魂
 - 隐私优先，本地化
 - 强调可读性和可编辑性
@@ -115,7 +115,7 @@
 
 ### 选项 1: 保持独立
 
-继续使用 `opentalon` 名称，作为独立项目发展。
+继续使用 `catpaw` 名称，作为独立项目发展。
 
 **优点**:
 - 保持独立性
@@ -133,9 +133,9 @@
 改名为更具辨识度的名称。
 
 **建议名称**:
-- `opentalon-python`
-- `opentalon-md` (Markdown 驱动)
-- `opentalon-cn` (中文社区版)
+- `catpaw-python`
+- `catpaw-md` (Markdown 驱动)
+- `catpaw-cn` (中文社区版)
 - `md-talon` (Markdown Talon)
 
 ---
@@ -145,8 +145,8 @@
 联系 GitHub 项目所有者，讨论合作可能。
 
 **联系方式**:
-- GitHub Issues: https://github.com/opentalon/opentalon/issues
-- 组织主页：https://github.com/opentalon
+- GitHub Issues: https://github.com/catpaw/catpaw/issues
+- 组织主页：https://github.com/catpaw
 
 **合作方向**:
 - Python 参考实现
@@ -159,8 +159,8 @@
 
 | 问题 | 答案 |
 |------|------|
-| **本地 OpenTalon 创建时间** | 2026-04-09 |
-| **GitHub OpenTalon 创建时间** | 2026-02-21 |
+| **本地 CatPaw 创建时间** | 2026-04-09 |
+| **GitHub CatPaw 创建时间** | 2026-02-21 |
 | **GitHub 项目早多少天** | 约 48 天 (7 周) |
 | **是否为同一项目** | ❌ 否 |
 | **是否为官方分支** | ❌ 否 |
@@ -169,4 +169,4 @@
 ---
 
 **记录时间**: 2026-04-12  
-**记录者**: OpenTalon Agent
+**记录者**: CatPaw Agent

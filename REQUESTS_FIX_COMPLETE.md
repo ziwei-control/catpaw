@@ -115,8 +115,8 @@ ca55220 feat: 黑色主题 UI + 聊天框图片上传
 
 | 平台 | 状态 | 地址 |
 |------|------|------|
-| **GitHub** | ✅ | https://github.com/ziwei-control/opentalon |
-| **Gitee** | ✅ | https://gitee.com/pandac0/opentalon |
+| **GitHub** | ✅ | https://github.com/ziwei-control/catpaw |
+| **Gitee** | ✅ | https://gitee.com/pandac0/catpaw |
 
 ---
 
@@ -159,7 +159,7 @@ ca55220 feat: 黑色主题 UI + 聊天框图片上传
 
 ### API Key 安全
 
-- ✅ API Key 存储在本地 `~/.opentalon/llm_config.json`
+- ✅ API Key 存储在本地 `~/.catpaw/llm_config.json`
 - ✅ 不会发送到任何服务器（除了 LLM 提供商）
 - ⚠️ 不要分享你的 API Key
 
@@ -193,15 +193,15 @@ ca55220 feat: 黑色主题 UI + 聊天框图片上传
 
 ## 🎉 总结
 
-OpenTalon v0.4.3 修复了关键 bug：
+CatPaw v0.4.3 修复了关键 bug：
 
 1. ✅ **全局导入 requests** - 聊天功能正常
 2. ✅ **删除重复导入** - 代码更清晰
 3. ✅ **服务正常运行** - 所有功能可用
 
 **仓库已同步**:
-- GitHub: https://github.com/ziwei-control/opentalon ✅
-- Gitee: https://gitee.com/pandac0/opentalon ✅
+- GitHub: https://github.com/ziwei-control/catpaw ✅
+- Gitee: https://gitee.com/pandac0/catpaw ✅
 
 ---
 

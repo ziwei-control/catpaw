@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenTalon 快速配置脚本
+# CatPaw 快速配置脚本
 # 一键配置云模型并启动
 
 set -e
@@ -8,12 +8,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo "======================================"
-echo "🤖 OpenTalon 快速配置"
+echo "🤖 CatPaw 快速配置"
 echo "======================================"
 echo ""
 
 # 检查 LLM 配置
-CONFIG_FILE=~/.opentalon/llm_config.json
+CONFIG_FILE=~/.catpaw/llm_config.json
 
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "⚠️  未检测到 LLM 配置"
@@ -24,7 +24,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "     python3 configure_llm.py"
     echo ""
     echo "  2. 手动编辑配置"
-    echo "     vim ~/.opentalon/llm_config.json"
+    echo "     vim ~/.catpaw/llm_config.json"
     echo ""
     echo "  3. 查看配置指南"
     echo "     cat CLOUD_MODEL_SETUP.md"
@@ -40,7 +40,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     fi
 else
     echo "✅ 检测到 LLM 配置"
-    python3 opentalon.py configure
+    python3 catpaw.py configure
     echo ""
     read -p "是否修改配置？(y/n): " choice
     
@@ -51,8 +51,8 @@ fi
 
 echo ""
 echo "======================================"
-echo "🚀 启动 OpenTalon"
+echo "🚀 启动 CatPaw"
 echo "======================================"
 echo ""
 
-python3 opentalon.py cli
+python3 catpaw.py cli

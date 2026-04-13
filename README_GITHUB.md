@@ -1,4 +1,4 @@
-# 🤖 OpenTalon
+# 🤖 CatPaw
 
 **Markdown 驱动的本地化自主智能体系统**
 
@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Cloud Models](https://img.shields.io/badge/cloud-Kimi%2FQwen%2FDeepSeek-green)](https://github.com/admin/opentalon)
+[![Cloud Models](https://img.shields.io/badge/cloud-Kimi%2FQwen%2FDeepSeek-green)](https://github.com/admin/catpaw)
 
 ---
 
@@ -63,8 +63,8 @@ pip3 install flask flask-cors
 ## 📁 项目结构
 
 ```
-opentalon/
-├── opentalon.py           # 主程序
+catpaw/
+├── catpaw.py           # 主程序
 ├── web_server.py          # Web 服务器
 ├── configure_llm.py       # 配置工具
 ├── start.sh               # 快速启动
@@ -112,7 +112,7 @@ opentalon/
 ### CLI
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ---
@@ -133,10 +133,10 @@ tail -f logs/web.log
 python3 configure_llm.py
 
 # 查看配置
-python3 opentalon.py configure
+python3 catpaw.py configure
 
 # CLI 交互
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 ---
@@ -164,8 +164,8 @@ MIT License
 
 ## 📞 联系
 
-- **GitHub**: [opentalon](https://github.com/admin/opentalon)
-- **Gitee**: [opentalon](https://gitee.com/admin/opentalon)
+- **GitHub**: [catpaw](https://github.com/admin/catpaw)
+- **Gitee**: [catpaw](https://gitee.com/admin/catpaw)
 
 ---
 

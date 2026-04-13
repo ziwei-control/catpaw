@@ -1,4 +1,4 @@
-# 🎉 OpenTalon 自动部署系统完成总结
+# 🎉 CatPaw 自动部署系统完成总结
 
 **完成时间**: 2026-04-12  
 **版本**: v0.3.1
@@ -21,10 +21,10 @@
 **使用**:
 ```bash
 # 全新部署
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 
 # 或下载后运行
-wget https://gitee.com/pandac0/opentalon/raw/main/deploy.sh
+wget https://gitee.com/pandac0/catpaw/raw/main/deploy.sh
 chmod +x deploy.sh
 ./deploy.sh
 ```
@@ -42,13 +42,13 @@ chmod +x deploy.sh
 
 **使用**:
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./update.sh
 ```
 
 ---
 
-### 3. 系统服务配置 (`opentalon.service.template`)
+### 3. 系统服务配置 (`catpaw.service.template`)
 
 **功能**:
 - ✅ systemd 服务模板
@@ -60,11 +60,11 @@ cd /home/admin/projects/opentalon
 
 **管理命令**:
 ```bash
-sudo systemctl start opentalon
-sudo systemctl stop opentalon
-sudo systemctl restart opentalon
-sudo systemctl status opentalon
-sudo journalctl -u opentalon -f
+sudo systemctl start catpaw
+sudo systemctl stop catpaw
+sudo systemctl restart catpaw
+sudo systemctl status catpaw
+sudo journalctl -u catpaw -f
 ```
 
 ---
@@ -139,7 +139,7 @@ sudo journalctl -u opentalon -f
 ssh user@new-server
 
 # 一键部署
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 
 # 完成！服务已启动
 ```
@@ -148,8 +148,8 @@ curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
 
 ```bash
 # 克隆仓库
-git clone https://gitee.com/pandac0/opentalon.git
-cd opentalon
+git clone https://gitee.com/pandac0/catpaw.git
+cd catpaw
 
 # 运行部署
 ./deploy.sh
@@ -163,7 +163,7 @@ cd opentalon
 # 创建部署脚本
 cat > batch_deploy.sh << 'EOF'
 #!/bin/bash
-export INSTALL_DIR=/opt/opentalon
+export INSTALL_DIR=/opt/catpaw
 export REPO_SOURCE=gitee
 export LLM_PROVIDER=moonshot
 export LLM_API_KEY=sk-xxx
@@ -187,7 +187,7 @@ ssh server2 '~/batch_deploy.sh'
 
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
-| `INSTALL_DIR` | `/home/admin/projects/opentalon` | 安装目录 |
+| `INSTALL_DIR` | `/home/admin/projects/catpaw` | 安装目录 |
 | `REPO_SOURCE` | `github` | 代码源 (github/gitee) |
 | `PYTHON_CMD` | `python3` | Python 命令 |
 | `PIP_CMD` | `pip3` | PIP 命令 |
@@ -207,10 +207,10 @@ ssh server2 '~/batch_deploy.sh'
 ## 📁 新增文件
 
 ```
-/home/admin/projects/opentalon/
+/home/admin/projects/catpaw/
 ├── deploy.sh                    # ⭐ 一键部署脚本
 ├── update.sh                    # ⭐ 一键更新脚本
-├── opentalon.service.template   # systemd 服务模板
+├── catpaw.service.template   # systemd 服务模板
 ├── requirements.txt             # Python 依赖
 ├── .env.example                 # 环境变量示例
 ├── DEPLOY.md                    # 部署指南
@@ -225,16 +225,16 @@ ssh server2 '~/batch_deploy.sh'
 
 ```bash
 # 一键部署
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 
 # 自定义部署
-INSTALL_DIR=/opt/opentalon REPO_SOURCE=gitee ./deploy.sh
+INSTALL_DIR=/opt/catpaw REPO_SOURCE=gitee ./deploy.sh
 ```
 
 ### 更新
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./update.sh
 ```
 
@@ -242,25 +242,25 @@ cd /home/admin/projects/opentalon
 
 ```bash
 # 启动
-sudo systemctl start opentalon
+sudo systemctl start catpaw
 
 # 停止
-sudo systemctl stop opentalon
+sudo systemctl stop catpaw
 
 # 重启
-sudo systemctl restart opentalon
+sudo systemctl restart catpaw
 
 # 状态
-sudo systemctl status opentalon
+sudo systemctl status catpaw
 
 # 日志
-sudo journalctl -u opentalon -f
+sudo journalctl -u catpaw -f
 ```
 
 ### 手动启动
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 ./start.sh
 ./stop.sh
 ```
@@ -283,12 +283,12 @@ cd /home/admin/projects/opentalon
 
 ```
 74daab6 feat: 添加一键部署和自动启动系统
-d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
+d7a8a1b Initial commit: CatPaw v0.3.0 - Markdown 驱动的智能体系统
 ```
 
 **已同步到**:
-- ✅ GitHub: https://github.com/ziwei-control/opentalon
-- ✅ Gitee: https://gitee.com/pandac0/opentalon
+- ✅ GitHub: https://github.com/ziwei-control/catpaw
+- ✅ Gitee: https://gitee.com/pandac0/catpaw
 
 ---
 
@@ -298,18 +298,18 @@ d7a8a1b Initial commit: OpenTalon v0.3.0 - Markdown 驱动的智能体系统
 
 ```bash
 # 使用专用用户
-sudo useradd -m opentalon
-sudo su - opentalon
+sudo useradd -m catpaw
+sudo su - catpaw
 
 # 部署
-curl -fsSL https://gitee.com/pandac0/opentalon/raw/main/deploy.sh | bash
+curl -fsSL https://gitee.com/pandac0/catpaw/raw/main/deploy.sh | bash
 ```
 
 ### 2. 备份配置
 
 ```bash
-tar -czf opentalon-backup-$(date +%Y%m%d).tar.gz \
-    ~/.opentalon/llm_config.json \
+tar -czf catpaw-backup-$(date +%Y%m%d).tar.gz \
+    ~/.catpaw/llm_config.json \
     workspace/
 ```
 
@@ -317,7 +317,7 @@ tar -czf opentalon-backup-$(date +%Y%m%d).tar.gz \
 
 ```bash
 # 添加到 crontab (每 5 分钟检查)
-(crontab -l 2>/dev/null; echo "*/5 * * * * pgrep -f 'web_server.py.*6767' || sudo systemctl restart opentalon") | crontab -
+(crontab -l 2>/dev/null; echo "*/5 * * * * pgrep -f 'web_server.py.*6767' || sudo systemctl restart catpaw") | crontab -
 ```
 
 ---
@@ -365,7 +365,7 @@ sudo certbot --nginx -d your-domain.com
 ```bash
 # 检查日志
 tail -f logs/web.log
-sudo journalctl -u opentalon -f
+sudo journalctl -u catpaw -f
 
 # 手动测试
 python3 web_server.py --port 6767
@@ -390,7 +390,7 @@ sudo firewall-cmd --list-all
 
 - [x] 创建 `deploy.sh` 部署脚本
 - [x] 创建 `update.sh` 更新脚本
-- [x] 创建 `opentalon.service.template` 系统服务模板
+- [x] 创建 `catpaw.service.template` 系统服务模板
 - [x] 创建 `requirements.txt` 依赖文件
 - [x] 创建 `.env.example` 环境变量示例
 - [x] 创建 `DEPLOY.md` 部署指南
@@ -402,7 +402,7 @@ sudo firewall-cmd --list-all
 
 ## 🎉 总结
 
-OpenTalon 现在支持：
+CatPaw 现在支持：
 
 1. ✅ **一键部署** - 从 GitHub/Gitee 克隆后自动安装配置
 2. ✅ **自动启动** - systemd 服务支持开机自启
@@ -417,8 +417,8 @@ OpenTalon 现在支持：
 ---
 
 **仓库地址**:
-- GitHub: https://github.com/ziwei-control/opentalon
-- Gitee: https://gitee.com/pandac0/opentalon
+- GitHub: https://github.com/ziwei-control/catpaw
+- Gitee: https://gitee.com/pandac0/catpaw
 
 **最后更新**: 2026-04-12  
 **版本**: v0.3.1

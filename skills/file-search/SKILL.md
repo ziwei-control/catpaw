@@ -2,7 +2,7 @@
 name: file-search
 description: 在工作区内搜索文件内容，支持 grep 风格的关键字搜索
 version: 0.1.0
-author: OpenTalon Team
+author: CatPaw Team
 triggers:
   - "搜索"
   - "查找"

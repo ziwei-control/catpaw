@@ -1,4 +1,4 @@
-# ✅ OpenTalon 完整使用指南
+# ✅ CatPaw 完整使用指南
 
 **更新时间**: 2026-04-12  
 **版本**: v0.2.0
@@ -11,7 +11,7 @@
 
 **✅ 完全可以!**
 
-OpenTalon 支持所有 OpenAI 兼容 API 的云模型，包括：
+CatPaw 支持所有 OpenAI 兼容 API 的云模型，包括：
 
 | 云模型 | 状态 | 配置难度 |
 |--------|------|---------|
@@ -24,11 +24,11 @@ OpenTalon 支持所有 OpenAI 兼容 API 的云模型，包括：
 
 ---
 
-### ❓ 问题 2: OpenTalon 可以网页访问吗？
+### ❓ 问题 2: CatPaw 可以网页访问吗？
 
 **✅ 可以!**
 
-OpenTalon 提供 Web 界面，可以通过浏览器访问：
+CatPaw 提供 Web 界面，可以通过浏览器访问：
 
 ```bash
 # 启动 Web 服务
@@ -54,7 +54,7 @@ http://localhost:8080
 #### 方式 A: 交互式配置 (推荐)
 
 ```bash
-cd /home/admin/projects/opentalon
+cd /home/admin/projects/catpaw
 python3 configure_llm.py
 ```
 
@@ -72,7 +72,7 @@ python3 configure_llm.py
 
 **Kimi2.5 配置**:
 ```bash
-cat > ~/.opentalon/llm_config.json << 'EOF'
+cat > ~/.catpaw/llm_config.json << 'EOF'
 {
   "provider": "openai",
   "api_key": "sk-your-kimi-key",
@@ -87,7 +87,7 @@ EOF
 
 **Qwen3.5 配置**:
 ```bash
-cat > ~/.opentalon/llm_config.json << 'EOF'
+cat > ~/.catpaw/llm_config.json << 'EOF'
 {
   "provider": "openai",
   "api_key": "sk-your-qwen-key",
@@ -105,14 +105,14 @@ EOF
 ### 步骤 2: 验证配置
 
 ```bash
-python3 opentalon.py configure
+python3 catpaw.py configure
 ```
 
 **成功输出**:
 ```
 ⚙️  LLM 配置信息:
 
-  ✅ 配置文件：/home/admin/.opentalon/llm_config.json
+  ✅ 配置文件：/home/admin/.catpaw/llm_config.json
   ✅ Provider: openai
   ✅ Model: kimi-latest (或 qwen-max)
   ✅ Base URL: https://api.moonshot.cn/v1 (或阿里云)
@@ -158,7 +158,7 @@ python3 web_server.py --host 0.0.0.0 --port 8080
 #### 方式 B: CLI 命令行
 
 ```bash
-python3 opentalon.py cli
+python3 catpaw.py cli
 ```
 
 **CLI 内部命令**:
@@ -225,7 +225,7 @@ python3 opentalon.py cli
 ### CLI 使用
 
 ```bash
-$ python3 opentalon.py cli
+$ python3 catpaw.py cli
 
 🤖 Talon > 你好，我是新用户
 
@@ -252,19 +252,19 @@ $ python3 opentalon.py cli
 ```bash
 # ========== 配置 ==========
 python3 configure_llm.py          # 配置云模型
-python3 opentalon.py configure    # 查看 LLM 配置
-python3 opentalon.py config       # 查看项目配置
+python3 catpaw.py configure    # 查看 LLM 配置
+python3 catpaw.py config       # 查看项目配置
 
 # ========== 使用 ==========
 ./start_web.sh                    # 启动 Web 服务 ⭐
-python3 opentalon.py cli          # 启动 CLI
+python3 catpaw.py cli          # 启动 CLI
 
 # ========== 技能 ==========
-python3 opentalon.py skills list  # 列出技能
-python3 opentalon.py memory       # 查看记忆
+python3 catpaw.py skills list  # 列出技能
+python3 catpaw.py memory       # 查看记忆
 
 # ========== 帮助 ==========
-python3 opentalon.py              # 查看所有命令
+python3 catpaw.py              # 查看所有命令
 cat QUICKSTART.md                 # 快速开始指南
 cat CLOUD_MODEL_SETUP.md          # 云模型配置详解
 ```
@@ -274,14 +274,14 @@ cat CLOUD_MODEL_SETUP.md          # 云模型配置详解
 ## 📁 项目文件结构
 
 ```
-opentalon/
+catpaw/
 ├── QUICKSTART.md              # 本文件 - 快速开始 ⭐
 ├── README.md                  # 项目说明
 ├── CLOUD_MODEL_SETUP.md       # 云模型配置指南
 ├── configure_llm.py           # 配置工具
 ├── web_server.py              # Web 服务器 ⭐
 ├── start_web.sh               # Web 启动脚本 ⭐
-├── opentalon.py               # 主程序
+├── catpaw.py               # 主程序
 │
 ├── workspace/                 # 工作空间
 │   ├── SOUL.md               # 智能体人格
@@ -326,7 +326,7 @@ python3 configure_llm.py
 python3 configure_llm.py
 
 # 或手动修改
-vim ~/.opentalon/llm_config.json
+vim ~/.catpaw/llm_config.json
 ```
 
 ### 问题 4: Web 无法访问
@@ -365,7 +365,7 @@ netstat -tlnp | grep 8080
 | `README.md` | 项目总览和架构 |
 | `CLOUD_MODEL_SETUP.md` | 云模型详细配置 |
 | `CLOUD_MODEL_COMPLETE.md` | 配置完成总结 |
-| `OPENTALON_TIMELINE.md` | 项目时间线 |
+| `CATPAW_TIMELINE.md` | 项目时间线 |
 | `workspace/SOUL.md` | 智能体人格定义 |
 | `workspace/USER.md` | 用户偏好模板 |
 
@@ -379,14 +379,14 @@ netstat -tlnp | grep 8080
 
 ```bash
 # 备份当前配置
-cp ~/.opentalon/llm_config.json ~/.opentalon/llm_config.backup.json
+cp ~/.catpaw/llm_config.json ~/.catpaw/llm_config.backup.json
 
 # 使用 Kimi
-cp ~/.opentalon/llm_config.kimi.example.json ~/.opentalon/llm_config.json
+cp ~/.catpaw/llm_config.kimi.example.json ~/.catpaw/llm_config.json
 # 编辑填入 API Key
 
 # 使用 Qwen
-cp ~/.opentalon/llm_config.qwen.example.json ~/.opentalon/llm_config.json
+cp ~/.catpaw/llm_config.qwen.example.json ~/.catpaw/llm_config.json
 # 编辑填入 API Key
 ```
 
@@ -419,7 +419,7 @@ python3 web_server.py --host 0.0.0.0 --port 8080
 1. **LLM 可以配云模型吗？Kimi2.5 和 Qwen3.5 可以用吗？**
    - ✅ **可以!** 完全支持，配置简单
 
-2. **OpenTalon 可以网页访问吗？**
+2. **CatPaw 可以网页访问吗？**
    - ✅ **可以!** 启动 Web 服务即可
 
 ### 🚀 快速开始

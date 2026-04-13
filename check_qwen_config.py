@@ -4,7 +4,7 @@
 import json
 from pathlib import Path
 
-config_file = Path.home() / '.opentalon' / 'llm_config.json'
+config_file = Path.home() / '.catpaw' / 'llm_config.json'
 
 if not config_file.exists():
     print("❌ 配置文件不存在")
